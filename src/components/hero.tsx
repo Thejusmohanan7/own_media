@@ -13,7 +13,7 @@ const HeroSection = () => {
   const heroContent = [
     {
       type: 'video',
-      src: 'https://storage.googleapis.com/coverr-main/mp4%2FCoverr-Wedding-11.mp4',
+      src: '/video.mp4',
       quote: "Love is composed of a single soul inhabiting two bodies.",
       author: "Aristotle"
     },
@@ -43,7 +43,7 @@ const HeroSection = () => {
 
     const timer = setTimeout(() => {
       setCurrentSlide((prev) => (prev + 1) % heroContent.length);
-    }, 7000); // Change slide every 7 seconds
+    }, 20000); // Change slide every 20 seconds
 
     return () => clearTimeout(timer);
   }, [currentSlide, isPlaying, heroContent.length]);
