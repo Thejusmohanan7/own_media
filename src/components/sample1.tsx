@@ -3,12 +3,14 @@ import React from 'react';
 export default function WeddingPhotography() {
   return (
     <div className="min-h-screen bg-[#F5F3EF]">
-      {/* Hero Section with Parallax Background */}
+      {/* Hero Section with Parallax Background - FIXED */}
       <header 
-        className="bg-center bg-cover bg-no-repeat bg-fixed flex items-center justify-center h-screen pb-12"
+        className="relative bg-center bg-cover bg-no-repeat bg-fixed flex items-center justify-center h-screen pb-12 overflow-hidden"
         style={{ backgroundImage: "url('/sample1.jpg')" }}
       >
-        <div className="bg-white/70 hover:bg-white transition duration-300 shadow-xl rounded-xl p-4 text-center md:p-8">
+        {/* Added overlay container to prevent layout shift */}
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative z-10 bg-white/70 hover:bg-white transition duration-300 shadow-xl rounded-xl p-4 text-center md:p-8 mx-4">
           <p className="italic text-sm text-[#333333]">Capturing Your Special Moments</p>
           <h1 className="text-5xl uppercase font-serif text-[#333333] mt-2">Eternal Memories</h1>
           <p className="text-lg text-[#333333] mt-4">Wedding Photography & Videography</p>
@@ -18,7 +20,7 @@ export default function WeddingPhotography() {
         </div>
       </header>
 
-      {/* Content Section */}
+      {/* Rest of the code remains exactly the same */}
       <div className="leading-normal mx-auto py-16 px-4 max-w-xl">
         <h2 className="text-3xl font-serif text-center text-[#333333] mb-8">Capturing Love Stories</h2>
         <p className="mb-6 text-lg text-[#333333]">
