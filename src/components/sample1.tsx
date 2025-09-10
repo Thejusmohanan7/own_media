@@ -27,13 +27,13 @@ export default function WeddingPhotography() {
           that tell your unique love story.
         </p>
         <p className="mb-6 text-lg text-[#333333]">
-          Using the parallax scrolling technique, we've designed this website to give you a sense of 
+          Using the parallax scrolling technique, we&apos;ve designed this website to give you a sense of 
           depth and movement, much like how we approach your wedding photography—layering moments 
           to create a beautiful narrative of your special day.
         </p>
         <p className="mb-6 text-lg text-[#333333]">
           Browse through our portfolio and imagine how we can transform your wedding memories into 
-          artistic treasures that you'll cherish for a lifetime.
+          artistic treasures that you&apos;ll cherish for a lifetime.
         </p>
       </div>
 
@@ -112,7 +112,7 @@ export default function WeddingPhotography() {
       >
         <div className="bg-white/90 hover:bg-white transition duration-300 shadow-xl rounded-xl mx-4 p-8 text-center">
           <h2 className="text-3xl font-serif text-[#333333] mb-4">Ready to Capture Your Day?</h2>
-          <p className="text-[#333333] mb-6">Let's discuss how we can tell your unique love story through our lens.</p>
+          <p className="text-[#333333] mb-6">Let&apos;s discuss how we can tell your unique love story through our lens.</p>
           <button className="bg-[#C1A35F] hover:bg-[#B09555] text-white px-8 py-3 rounded-full transition duration-300 font-medium">
             Contact Us Today
           </button>
@@ -135,8 +135,8 @@ export default function WeddingPhotography() {
               </div>
             </div>
             <p className="text-[#333333] italic">
-              "The photos took our breath away! They captured every emotion and special moment perfectly. 
-              We'll treasure these memories forever."
+              &quot;The photos took our breath away! They captured every emotion and special moment perfectly. 
+              We&quot;ll treasure these memories forever.&quot;
             </p>
           </div>
 
@@ -151,8 +151,8 @@ export default function WeddingPhotography() {
               </div>
             </div>
             <p className="text-[#333333] italic">
-              "Working with Eternal Memories was the best decision we made for our wedding. The photos are 
-              artistic, romantic, and truly us."
+              &quot;Working with Eternal Memories was the best decision we made for our wedding. The photos are 
+              artistic, romantic, and truly us.&quot;
             </p>
           </div>
         </div>
