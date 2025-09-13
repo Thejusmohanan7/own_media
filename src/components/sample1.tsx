@@ -21,23 +21,24 @@ export default function WeddingPhotography() {
       </header>
 
       {/* Rest of the code remains exactly the same */}
-      <div className="leading-normal mx-auto py-16 px-4 max-w-xl">
-        <h2 className="text-3xl font-serif text-center text-[#333333] mb-8">Capturing Love Stories</h2>
-        <p className="mb-6 text-lg text-[#333333]">
-          At Eternal Memories, we specialize in capturing the most precious moments of your wedding day. 
-          Our photography style blends artistic vision with genuine emotion, creating timeless images 
-          that tell your unique love story.
-        </p>
-        <p className="mb-6 text-lg text-[#333333]">
-          Using the parallax scrolling technique, we&apos;ve designed this website to give you a sense of 
-          depth and movement, much like how we approach your wedding photography—layering moments 
-          to create a beautiful narrative of your special day.
-        </p>
-        <p className="mb-6 text-lg text-[#333333]">
-          Browse through our portfolio and imagine how we can transform your wedding memories into 
-          artistic treasures that you&apos;ll cherish for a lifetime.
-        </p>
-      </div>
+     <div className="leading-normal mx-auto py-16 px-4 max-w-xl">
+  <h2 className="text-3xl font-serif text-center text-[#333333] mb-8">Preserving Your Wedding Moments</h2>
+  <p className="mb-6 text-lg text-[#333333]">
+    Your wedding day is filled with fleeting moments, emotions, and memories you’ll want to treasure forever. 
+    We specialize in documenting those authentic connections — the laughter, the tears, and the joy — in a way 
+    that feels natural and timeless.
+  </p>
+  <p className="mb-6 text-lg text-[#333333]">
+    With a blend of creativity and storytelling, our photography captures more than just images; it tells the 
+    story of your love, your family, and your celebration. Every photograph is crafted to reflect the true 
+    essence of your day.
+  </p>
+  <p className="mb-6 text-lg text-[#333333]">
+    Explore our portfolio and envision how we can turn your once-in-a-lifetime moments into a collection of 
+    memories you’ll cherish for generations.
+  </p>
+</div>
+
 
       {/* Second Parallax Section */}
       <div 
