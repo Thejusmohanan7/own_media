@@ -85,7 +85,7 @@ export default function Service2() {
               <h3 className="text-2xl font-serif text-[#232122] mb-4">Capture Every Moment</h3>
               <p className="text-[#333333] mb-4">
                 Our team of professional photographers and videographers will beautifully document your 
-                wedding day, creating timeless memories you'll cherish forever.
+                wedding day, creating timeless memories you&apos;ll cherish forever.
               </p>
               <ul className="text-[#333333] mb-6 space-y-2">
                 <li className="flex items-center">

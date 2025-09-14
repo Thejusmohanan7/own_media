@@ -88,11 +88,11 @@ export default function Service4() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="absolute -left-6 top-3 text-3xl text-[#C1A35F] opacity-60">"</div>
+            <div className="absolute -left-6 top-3 text-3xl text-[#C1A35F] opacity-60">&quot;</div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-[#232122] mb-6 leading-tight px-8">
               Your love story deserves to be told in the most <span className="text-[#C1A35F]">beautiful</span> way
             </h2>
-            <div className="absolute -right-6 bottom-3 text-3xl text-[#C1A35F] opacity-60">"</div>
+            <div className="absolute -right-6 bottom-3 text-3xl text-[#C1A35F] opacity-60">&quot;</div>
           </motion.div>
 
           {/* Author line */}
