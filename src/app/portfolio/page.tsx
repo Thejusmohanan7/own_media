@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Calendar, Camera, Users, MapPin, Star, ChevronLeft, ChevronRight, Play, ArrowRight, Plus, Film, Settings, Lightbulb, Clock } from 'lucide-react';
+import Image from 'next/image';
+import { Heart, MapPin, Play, ArrowRight, Plus, Film, Settings, Lightbulb, Clock } from 'lucide-react';
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -23,7 +24,7 @@ export default function PortfolioPage() {
     {
       id: 2,
       category: 'engagement',
-      image: 'https://images.unsplash.com/photo-1547391650-4b7e034a4b2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500',
+      image: '/sample3.jpg',
       title: 'Sunset Beach Proposal',
       description: 'Romantic beach setup with custom decorations',
       location: 'Malibu, CA',
@@ -111,7 +112,7 @@ export default function PortfolioPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#F5F3EF] via-white to-[#F5F3EF]">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
+      <section className="relative pt-20 md:pt-28 overflow-hidden">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -123,14 +124,14 @@ export default function PortfolioPage() {
               Our Portfolio
             </h1>
             <p className="text-lg md:text-xl text-[#333333] max-w-2xl mx-auto">
-              Browse through our collection of beautiful weddings and events we've had the privilege to plan
+              Browse through our collection of beautiful weddings and events we&apos;ve had the privilege to plan
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Portfolio Gallery Section */}
-      <section className="py-16 md:py-24 relative">
+      <section className="py-16 md:py-10 relative">
         {/* Decorative elements */}
         <div className="absolute top-20 left-10 w-24 h-24 bg-[#C1A35F]/10 rounded-full blur-xl"></div>
         <div className="absolute bottom-20 right-10 w-32 h-32 bg-[#C1A35F]/10 rounded-full blur-xl"></div>
@@ -143,7 +144,7 @@ export default function PortfolioPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center justify-center w-16 h-16  bg-opacity-10 rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-opacity-10 rounded-full mb-6">
               <Heart className="w-8 h-8 text-[#C1A35F]" />
             </div>
             <h2 className="text-3xl md:text-4xl font-serif text-[#232122] mb-4">
@@ -194,10 +195,12 @@ export default function PortfolioPage() {
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <div className="relative overflow-hidden h-80">
-                  <img 
+                  <Image 
                     src={item.image} 
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   
                   {/* Overlay */}
@@ -280,7 +283,7 @@ export default function PortfolioPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-[#C1A35F] bg-opacity-10 rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-opacity-10 rounded-full mb-6">
               <Film className="w-8 h-8 text-[#C1A35F]" />
             </div>
             <h2 className="text-3xl md:text-4xl font-serif text-[#232122] mb-4">
@@ -347,11 +350,13 @@ export default function PortfolioPage() {
               transition={{ duration: 0.5 }}
               className="relative rounded-2xl overflow-hidden shadow-xl"
             >
-              <div className={`aspect-video bg-gradient-to-br ${processSteps[activeProcess].color} rounded-2xl overflow-hidden`}>
-                <img 
+              <div className={`aspect-video bg-gradient-to-br ${processSteps[activeProcess].color} rounded-2xl overflow-hidden relative`}>
+                <Image 
                   src={processSteps[activeProcess].image} 
                   alt={processSteps[activeProcess].title}
-                  className="w-full h-full object-cover mix-blend-multiply opacity-70"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                  className="object-cover mix-blend-multiply opacity-70"
                 />
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
@@ -391,7 +396,7 @@ export default function PortfolioPage() {
               Ready to Create Your Dream Event?
             </h2>
             <p className="text-lg text-[#333333] mb-8 max-w-2xl mx-auto">
-              Let's discuss your vision and start planning a day you'll remember forever
+              Let&apos;s discuss your vision and start planning a day you&apos;ll remember forever
             </p>
             <motion.button
               whileHover={{ 
