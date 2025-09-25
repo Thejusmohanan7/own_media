@@ -85,7 +85,7 @@ const About = () => {
   // Wedding images array
   const weddingImages = [
     {
-      src: "/about.jpg",
+      src: "/about.JPG",
       alt: "Bride and groom kissing"
     }
   ];

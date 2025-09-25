@@ -43,7 +43,7 @@ export default function WeddingPhotography() {
       {/* Second Parallax Section */}
       <div 
         className="bg-center bg-cover bg-no-repeat bg-fixed container flex items-center justify-center h-screen mx-auto"
-        style={{ backgroundImage: "url('/parallax2.jpg')" }}
+        style={{ backgroundImage: "url('/parallax2.JPG')" }}
       >
         <blockquote className="bg-white/70 hover:bg-white transition duration-300 shadow-xl rounded-xl mx-4 p-6 text-center text-[#333333] md:p-8">
           <p className="font-serif italic text-2xl text-[#333333]">
@@ -111,7 +111,7 @@ export default function WeddingPhotography() {
       {/* Third Parallax Section */}
       <div 
         className="bg-center bg-cover bg-no-repeat bg-fixed container flex items-center justify-center h-screen mx-auto"
-        style={{ backgroundImage: "url('/parallax3.jpg')" }}
+        style={{ backgroundImage: "url('/parallax3.JPG')" }}
       >
         <div className="bg-white/90 hover:bg-white transition duration-300 shadow-xl rounded-xl mx-4 p-8 text-center">
           <h2 className="text-3xl font-serif text-[#333333] mb-4">Ready to Capture Your Day?</h2>

@@ -25,7 +25,7 @@ const HeroSection = () => {
     },
     {
       type: 'image',
-      src: '/hero2.jpg',
+      src: '/hero2.JPG',
       quote: "A successful marriage requires falling in love many times, always with the same person.",
       author: "Mignon McLaughlin"
     },
