@@ -19,19 +19,19 @@ const HeroSection = () => {
     },
     {
       type: 'image',
-      src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      src: '/hero1.jpg',
       quote: "The best thing to hold onto in life is each other.",
       author: "Audrey Hepburn"
     },
     {
       type: 'image',
-      src: 'https://images.unsplash.com/photo-1549439602-43ebca2327af?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      src: '/hero2.jpg',
       quote: "A successful marriage requires falling in love many times, always with the same person.",
       author: "Mignon McLaughlin"
     },
     {
       type: 'image',
-      src: 'https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80',
+      src: '/hero3.jpg',
       quote: "Where there is love there is life.",
       author: "Mahatma Gandhi"
     }
