@@ -37,7 +37,7 @@ const ChatBot = () => {
   const [showOptions, setShowOptions] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const phoneNumber = '8156970994';
+  const phoneNumber = '+91 9496609967';
 
   const quickQuestions: QuickQuestion[] = [
     {
@@ -92,7 +92,7 @@ const ChatBot = () => {
 
       return () => clearTimeout(timer);
     }
-  }, [isOpen, messages.length]); // Added messages.length to dependencies
+  }, [isOpen, messages.length]); 
 
   const handleQuickQuestion = (question: QuickQuestion) => {
     setMessages(prev => [...prev, {
