@@ -158,60 +158,63 @@ const ChatBot = () => {
 
   return (
     <>
-      {/* Chat Bot Icon */}
+      {/* Chat Bot Icon - Responsive positioning */}
       <motion.div
-        className="fixed bottom-28 right-8 z-50"
+        className="fixed z-50 sm:bottom-28 sm:right-8 bottom-28 right-8"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
         <motion.button
           onClick={toggleChat}
-          className="relative bg-gray-900 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-700"
+          className="relative bg-gray-900 text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-700"
           animate={{ 
             scale: isOpen ? 0.95 : 1
           }}
         >
-          {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
+          {isOpen ? <X size={20} className="sm:size-6" /> : <MessageCircle size={28} className="sm:size-6" />}
         </motion.button>
       </motion.div>
 
-      {/* Dark UI Chat Window */}
+      {/* Responsive Chat Window */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="fixed bottom-24 right-6 w-96 bg-gray-900 rounded-lg shadow-xl z-40 overflow-hidden border border-gray-700"
-            style={{ height: '500px' }}
+            className="fixed z-40 sm:bottom-24 sm:right-6 bottom-4 right-4 left-4 sm:left-auto sm:w-96 w-auto max-w-full bg-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700"
+            style={{ height: '500px', maxHeight: 'calc(100vh - 120px)' }}
           >
             {/* Header */}
-            <div className="bg-gray-800 text-white p-4 border-b border-gray-700">
+            <div className="bg-gray-800 text-white p-3 sm:p-4 border-b border-gray-700">
               <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                    <Camera size={20} />
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <div className="w-10 h-10 sm:w-10 sm:h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                    <Camera size={16} className="sm:size-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white text-lg">Own Media Assistant</h3>
+                    <h3 className="font-semibold text-white text-sm sm:text-lg">Own Media Assistant</h3>
                     <p className="text-xs text-gray-300">Always here to help</p>
                   </div>
                 </div>
-                <div className="text-xs text-gray-300 bg-gray-700 px-3 py-1 rounded">
+                <div className="text-xs text-gray-300 bg-gray-700 px-2 py-1 sm:px-3 sm:py-1 rounded">
                   {getCurrentTime()}
                 </div>
               </div>
             </div>
 
-            {/* Messages Container - Hidden Scrollbar */}
-            <div className="h-72 overflow-y-auto p-4 bg-gray-900 scrollbar-hide">
-              <div className="space-y-4">
+            {/* Messages Container - Responsive height */}
+            <div 
+              className="overflow-y-auto bg-gray-900 scrollbar-hide p-3 sm:p-4"
+              style={{ height: 'calc(100% - 180px)' }}
+            >
+              <div className="space-y-3 sm:space-y-4">
                 {messages.map((message) => (
                   <div key={message.id} className="space-y-2">
                     {/* System message */}
                     {message.isSystem && (
                       <div className="text-center">
-                        <span className="text-xs text-gray-400 bg-gray-800 px-3 py-2 rounded">
+                        <span className="text-xs text-gray-400 bg-gray-800 px-2 py-1 sm:px-3 sm:py-2 rounded">
                           {message.text}
                         </span>
                       </div>
@@ -221,14 +224,14 @@ const ChatBot = () => {
                     {!message.isSystem && (
                       <div className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}>
                         <div
-                          className={`max-w-[85%] px-4 py-3 rounded-lg ${
+                          className={`max-w-[90%] sm:max-w-[85%] px-3 py-2 sm:px-4 sm:py-3 rounded-lg ${
                             message.isBot
                               ? 'bg-gray-800 border border-gray-700 text-gray-200'
                               : 'bg-blue-600 text-white'
                           }`}
                         >
-                          <p className="text-sm leading-relaxed">{message.text}</p>
-                          <span className="text-xs text-gray-400 block mt-2 text-right">
+                          <p className="text-xs sm:text-sm leading-relaxed">{message.text}</p>
+                          <span className="text-xs text-gray-400 block mt-1 sm:mt-2 text-right">
                             {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                           </span>
                         </div>
@@ -239,20 +242,20 @@ const ChatBot = () => {
                 
                 {/* Quick Questions */}
                 {showOptions && (
-                  <div className="space-y-4">
-                    <div className="bg-gray-800 border border-gray-700 rounded-lg p-4">
-                      <h4 className="font-semibold text-white text-base mb-4">OWN MEDIA TOPICS</h4>
-                      <div className="grid gap-3">
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="bg-gray-800 border border-gray-700 rounded-lg p-3 sm:p-4">
+                      <h4 className="font-semibold text-white text-sm sm:text-base mb-3 sm:mb-4">OWN MEDIA TOPICS</h4>
+                      <div className="grid gap-2 sm:gap-3">
                         {quickQuestions.map((question) => (
                           <button
                             key={question.id}
                             onClick={() => handleQuickQuestion(question)}
-                            className="flex items-center space-x-3 p-3 text-left hover:bg-gray-700 rounded-lg transition-colors duration-200"
+                            className="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 text-left hover:bg-gray-700 rounded-lg transition-colors duration-200"
                           >
                             <div className={question.color}>
                               {question.icon}
                             </div>
-                            <span className="text-sm text-gray-200 font-medium">{question.text}</span>
+                            <span className="text-xs sm:text-sm text-gray-200 font-medium">{question.text}</span>
                           </button>
                         ))}
                       </div>
@@ -270,28 +273,28 @@ const ChatBot = () => {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Contact Buttons - Simplified without phone number */}
-            <div className="border-t border-gray-700 p-4 bg-gray-800">
-              <div className="flex space-x-3">
+            {/* Contact Buttons - Responsive */}
+            <div className="border-t border-gray-700 p-3 sm:p-4 bg-gray-800">
+              <div className="flex space-x-2 sm:space-x-3">
                 <button
                   onClick={handleCall}
-                  className="flex-1 bg-gray-700 hover:bg-gray-600 text-gray-200 py-3 px-4 rounded-lg flex items-center justify-center space-x-2 text-sm font-medium transition-colors duration-200 border border-gray-600"
+                  className="flex-1 bg-gray-700 hover:bg-gray-600 text-gray-200 py-2 sm:py-3 px-2 sm:px-4 rounded-lg flex items-center justify-center space-x-1 sm:space-x-2 text-xs sm:text-sm font-medium transition-colors duration-200 border border-gray-600"
                 >
-                  <Phone size={18} />
+                  <Phone size={16} className="sm:size-5" />
                   <span>Call Now</span>
                 </button>
                 
                 <button
                   onClick={handleWhatsApp}
-                  className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg flex items-center justify-center space-x-2 text-sm font-medium transition-colors duration-200"
+                  className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 sm:py-3 px-2 sm:px-4 rounded-lg flex items-center justify-center space-x-1 sm:space-x-2 text-xs sm:text-sm font-medium transition-colors duration-200"
                 >
-                  <MessageSquare size={18} />
+                  <MessageSquare size={16} className="sm:size-5" />
                   <span>WhatsApp</span>
                 </button>
               </div>
               
               {/* Type something indicator */}
-              <div className="mt-3 text-center">
+              <div className="mt-2 sm:mt-3 text-center">
                 <p className="text-xs text-gray-400">Select an option or contact us directly</p>
               </div>
             </div>
