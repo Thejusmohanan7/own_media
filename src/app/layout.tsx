@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/nav';
 import Footer from '@/components/footer';
 import { ScrollToTop } from '@/components/scrollup';
+import ChatBot from '@/components/ChatBot'; // Import the chatbot component
 
 const inter = Inter({ subsets: ['latin'] });
 const playfair = Playfair_Display({
@@ -98,6 +99,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <ScrollToTop />
+        <ChatBot /> {/* Add the chatbot component here */}
       </body>
     </html>
   );

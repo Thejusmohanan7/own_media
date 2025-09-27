@@ -86,7 +86,7 @@ const About = () => {
   const weddingImages = [
     {
       src: "/about.JPG",
-      alt: "Bride and groom kissing"
+      alt: "Bride and groom"
     }
   ];
 
