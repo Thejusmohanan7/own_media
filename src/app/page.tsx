@@ -7,6 +7,7 @@ import Consultation from '@/components/plan'
 import TeamSection from '@/components/team'
 import Sample1 from '@/components/sample1'
 import Sample3 from '@/components/sample3'
+import Sample4 from '@/components/sample4'
 
 function page() {
   return (
@@ -17,6 +18,7 @@ function page() {
       <Portfolio/>
       <Sample1/>
       <Sample3/>
+      <Sample4/>
       <TeamSection/>
       <Consultation/>
     </div>
