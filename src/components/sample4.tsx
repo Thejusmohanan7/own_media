@@ -1,6 +1,6 @@
-// components/Sample4.tsx
 'use client';
 
+import Image from 'next/image';
 import React, { useEffect } from 'react';
 
 const Sample4: React.FC = () => {
@@ -44,33 +44,37 @@ const Sample4: React.FC = () => {
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4 p-4 max-w-7xl mx-auto">
         {/* Column 1 */}
         <div className="grid gap-4">
-          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image">
-            <img
+          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image relative">
+            <Image
               className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:rotate-1 cursor-pointer"
               src="/h1.JPG"
               alt="Bride preparing for wedding ceremony"
+              width={400}
+              height={600}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
               <p className="text-white text-sm font-light">Bride Preparation</p>
             </div>
           </div>
-          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-100">
-            <div className="relative">
-              <img
-                className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:rotate-1 cursor-pointer"
-                src="/v1.JPG"
-                alt="Wedding bouquet details"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
-                <p className="text-white text-sm font-light">Bridal Bouquet</p>
-              </div>
+          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-100 relative">
+            <Image
+              className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:rotate-1 cursor-pointer"
+              src="/v1.JPG"
+              alt="Wedding bouquet details"
+              width={400}
+              height={500}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
+              <p className="text-white text-sm font-light">Bridal Bouquet</p>
             </div>
           </div>
-          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-200">
-            <img
+          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-200 relative">
+            <Image
               className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:-rotate-1 cursor-pointer"
               src="/h2.JPG"
               alt="Romantic wedding moment"
+              width={400}
+              height={600}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
               <p className="text-white text-sm font-light">Romantic Moment</p>
@@ -80,33 +84,37 @@ const Sample4: React.FC = () => {
 
         {/* Column 2 */}
         <div className="grid gap-4">
-          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-150">
-            <div className="relative">
-              <img
-                className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:-rotate-1 cursor-pointer"
-                src="/v2.JPG"
-                alt="Wedding ceremony"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
-                <p className="text-white text-sm font-light">Ceremony</p>
-              </div>
+          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-150 relative">
+            <Image
+              className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:-rotate-1 cursor-pointer"
+              src="/v2.JPG"
+              alt="Wedding ceremony"
+              width={400}
+              height={500}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
+              <p className="text-white text-sm font-light">Ceremony</p>
             </div>
           </div>
-          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-250">
-            <img
+          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-250 relative">
+            <Image
               className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:rotate-1 cursor-pointer"
-              src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+              src="/img1.JPG"
               alt="Wedding rings"
+              width={400}
+              height={600}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
               <p className="text-white text-sm font-light">Wedding Rings</p>
             </div>
           </div>
-          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-300">
-            <img
+          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-300 relative">
+            <Image
               className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:-rotate-1 cursor-pointer"
               src="/h3.JPG"
               alt="Wedding couple portrait"
+              width={400}
+              height={600}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
               <p className="text-white text-sm font-light">Couple Portrait</p>
@@ -116,59 +124,65 @@ const Sample4: React.FC = () => {
 
         {/* Column 3 */}
         <div className="grid gap-4">
-          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-200">
-            <img
+          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-200 relative">
+            <Image
               className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:rotate-1 cursor-pointer"
-              src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+              src="/img2.JPG"
               alt="Wedding venue"
+              width={400}
+              height={500}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
               <p className="text-white text-sm font-light">Venue Details</p>
             </div>
           </div>
-          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-350">
-            <img
+          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-350 relative">
+            <Image
               className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:-rotate-1 cursor-pointer"
-              src="https://docs.material-tailwind.com/img/team-3.jpg"
+              src="/img3.jpg"
               alt="Wedding celebration"
+              width={400}
+              height={600}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
               <p className="text-white text-sm font-light">Celebration</p>
             </div>
           </div>
-          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-400">
-            <div className="relative">
-              <img
-                className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:rotate-1 cursor-pointer"
-                src="/v3.JPG"
-                alt="Wedding vows"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
-                <p className="text-white text-sm font-light">Vows</p>
-              </div>
+          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-400 relative">
+            <Image
+              className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:rotate-1 cursor-pointer"
+              src="/v3.JPG"
+              alt="Wedding vows"
+              width={400}
+              height={500}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
+              <p className="text-white text-sm font-light">Vows</p>
             </div>
           </div>
         </div>
 
         {/* Column 4 */}
         <div className="grid gap-4">
-          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-300">
-            <div className="relative">
-              <img
-                className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:-rotate-1 cursor-pointer"
-                src="/v4.JPG"
-                alt="Bride and groom"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
-                <p className="text-white text-sm font-light">Newlyweds</p>
-              </div>
+          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-300 relative">
+            <Image
+              className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:-rotate-1 cursor-pointer"
+              src="/v4.JPG"
+              alt="Bride and groom"
+              width={400}
+              height={500}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
+              <p className="text-white text-sm font-light">Newlyweds</p>
             </div>
           </div>
-          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-450">
-            <img
+          <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-450 relative">
+            <Image
               className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:rotate-1 cursor-pointer"
               src="/v5.JPG"
               alt="Wedding decorations"
+              width={400}
+              height={600}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
               <p className="text-white text-sm font-light">Decorations</p>
@@ -180,7 +194,7 @@ const Sample4: React.FC = () => {
       {/* Footer Text */}
       <div className="text-center mt-12">
         <p className="text-rose-600 font-light italic">
-          "Every love story is beautiful, but yours is our favorite to capture."
+          &quot;Every love story is beautiful, but yours is our favorite to capture.&quot;
         </p>
       </div>
 

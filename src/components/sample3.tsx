@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 const WeddingGallery: React.FC = () => {
@@ -7,7 +8,7 @@ const WeddingGallery: React.FC = () => {
 
   const weddingImages = [
     {
-      src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+      src: "/img4.jpg",
       title: "First Kiss"
     },
     {
@@ -23,11 +24,11 @@ const WeddingGallery: React.FC = () => {
       title: "Reception Joy"
     },
     {
-      src: "https://images.unsplash.com/photo-1445452916036-9022dfd33aa8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80",
+      src: "/img5.jpg",
       title: "Dance Floor"
     },
     {
-      src: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+      src: "/img6.jpg",
       title: "Romantic Sunset"
     }
   ];
@@ -67,9 +68,11 @@ const WeddingGallery: React.FC = () => {
                 onClick={() => handleImageClick(image.src)}
               >
                 <div className="w-full h-64 relative overflow-hidden">
-                  <img
+                  <Image
                     src={image.src}
                     alt={image.title}
+                    width={400}
+                    height={256}
                     className="w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-105"
                   />
                   
@@ -104,9 +107,11 @@ const WeddingGallery: React.FC = () => {
                 onClick={() => handleImageClick(image.src)}
               >
                 <div className="w-full h-full relative overflow-hidden">
-                  <img
+                  <Image
                     src={image.src}
                     alt={image.title}
+                    width={400}
+                    height={500}
                     className="w-full h-full object-cover transition-all duration-1000 ease-in-out brightness-90 group-hover:brightness-100 group-hover:scale-110"
                   />
                   
@@ -145,9 +150,11 @@ const WeddingGallery: React.FC = () => {
           onClick={handleCloseFullscreen}
         >
           <div className="relative max-w-6xl max-h-full w-full h-full flex items-center justify-center">
-            <img
+            <Image
               src={fullscreenImage}
               alt="Fullscreen wedding"
+              width={1200}
+              height={800}
               className="max-w-full max-h-full object-contain rounded-lg"
               onClick={(e) => e.stopPropagation()}
             />
