@@ -13,7 +13,7 @@ const HeroSection = () => {
   const heroContent = [
     {
       type: 'video',
-      src: '/video.mp4',
+      src: '/hero.mp4',
       quote: "Love is composed of a single soul inhabiting two bodies.",
       author: "Aristotle"
     },
@@ -136,10 +136,10 @@ const HeroSection = () => {
         ))}
       </div>
 
-      {/* Navigation arrows */}
+      {/* Navigation arrows - Hidden on mobile */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/80 hover:text-white transition-colors z-10 p-2"
+        className="hidden md:block absolute left-4 top-1/2 transform -translate-y-1/2 text-white/80 hover:text-white transition-colors z-10 p-2"
         aria-label="Previous slide"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 md:h-10 md:w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -148,7 +148,7 @@ const HeroSection = () => {
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/80 hover:text-white transition-colors z-10 p-2"
+        className="hidden md:block absolute right-4 top-1/2 transform -translate-y-1/2 text-white/80 hover:text-white transition-colors z-10 p-2"
         aria-label="Next slide"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 md:h-10 md:w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -170,6 +170,28 @@ const HeroSection = () => {
           )}
         </svg>
       </button>
+
+      {/* Mobile arrows positioned completely under quotes */}
+      <div className="md:hidden absolute top-3/4 left-0 right-0 flex justify-between items-center px-8 z-10">
+        <button
+          onClick={prevSlide}
+          className="text-white/80 hover:text-white transition-colors p-2"
+          aria-label="Previous slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          onClick={nextSlide}
+          className="text-white/80 hover:text-white transition-colors p-2"
+          aria-label="Next slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
     </section>
   );
 };
