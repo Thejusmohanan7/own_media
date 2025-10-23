@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
+import { Check, Star, Camera, Video, Heart } from 'lucide-react';
 
 export default function Service2() {
   const ref = useRef(null);
@@ -13,6 +14,71 @@ export default function Service2() {
   
   const y = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.5, 1, 0.5]);
+
+  const packages = [
+    {
+      title: "Bride & Groom (Both Site) Package-01",
+      price: "95,000",
+      popular: false,
+      icon: <Camera className="w-6 h-6" />,
+      features: [
+        "Pre Wedding - 1 Photographer",
+        "Wedding Pre & Wedding Day Coverage",
+        "1 Photographer + 1 Videographer (Bride Site)",
+        "1 Photographer + 1 Videographer (Groom Site)",
+        "Traditional & Candid Photography",
+        "Traditional & Candid Videography",
+        "Highlight (1080P FULL HD)",
+        "Wedding Reef (1080P FULL HD)",
+        "Full Function Videos (1080P FULL HD)",
+        "2 Set 100 Pages Album",
+        "Soft Copies of All Photos",
+        "Complimentary - 4 Set Photo Frame Calendar & Mini Book"
+      ]
+    },
+    {
+      title: "Bride & Groom (Both Site) Package-02",
+      price: "135,000",
+      popular: true,
+      icon: <Video className="w-6 h-6" />,
+      features: [
+        "Pre Wedding - 1 Photographer & 1 Videographer",
+        "Wedding Pre / Engagement Pre, Engagement Day & Wedding Day",
+        "1 Photographer + 1 Videographer (Bride Site)",
+        "1 Photographer + 1 Videographer (Groom Site)",
+        "Traditional & Candid Photography",
+        "Traditional & Candid Videography",
+        "Engagement + Wedding Combined Highlight (1080P FULL HD)",
+        "Engagement Reef (1080P FULL HD)",
+        "Wedding Reef (1080P FULL HD)",
+        "Full Function Videos (1080P FULL HD)",
+        "2 Set 100 Pages Album",
+        "Soft Copies of All Photos",
+        "Complimentary - 4 Set Photo Frame Calendar & Mini Book"
+      ]
+    },
+    {
+      title: "Package-01",
+      price: "45,000",
+      popular: false,
+      icon: <Heart className="w-6 h-6" />,
+      features: [
+        "Wedding Pre & Wedding Day Coverage",
+        "1 Photographer + 1 Videographer",
+        "Highlight (1080P FULL HD)",
+        "Wedding Reef (1080P FULL HD)",
+        "100 Pages Album",
+        "Soft Copies of All Photos",
+        "Complimentary - 2 Set Photo Frame Calendar & Mini Book"
+      ]
+    }
+  ];
+
+  const handleWhatsAppClick = (pkgTitle: string, pkgPrice: string) => {
+    const message = `Hi! I am interested in booking the ${pkgTitle} package for ₹${pkgPrice}. Please provide more details.`;
+    const whatsappUrl = `https://wa.me/919496609967?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   return (
     <section ref={ref} className="relative py-16 md:py-24 overflow-hidden bg-white">
@@ -30,11 +96,65 @@ export default function Service2() {
           style={{ opacity }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-serif text-[#232122] mb-4">Photography & Videography</h2>
+          <h2 className="text-3xl md:text-4xl font-serif text-[#232122] mb-4">Photography & Videography Packages</h2>
           <div className="w-20 h-1 bg-[#C1A35F] mx-auto"></div>
         </motion.div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        {/* Packages Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+          {packages.map((pkg, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-lg shadow-lg border border-[#F5F3EF] overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+            >
+              {pkg.popular && (
+                <div className="bg-[#C1A35F] text-white py-2 text-center text-sm font-medium">
+                  <Star className="w-4 h-4 inline mr-2" />
+                  MOST POPULAR
+                </div>
+              )}
+              
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="flex justify-center mb-4">
+                  <div className="p-3 bg-[#F5F3EF] rounded-full text-[#C1A35F]">
+                    {pkg.icon}
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-serif text-[#232122] text-center mb-4 min-h-[60px] flex items-center justify-center">
+                  {pkg.title}
+                </h3>
+                
+                <div className="text-center mb-6">
+                  <span className="text-3xl font-bold text-[#C1A35F]">₹{pkg.price}</span>
+                </div>
+                
+                <ul className="space-y-3 mb-6 flex-grow">
+                  {pkg.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-[#333333] text-sm leading-relaxed">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <button 
+                  onClick={() => handleWhatsAppClick(pkg.title, pkg.price)}
+                  className="w-full bg-[#C1A35F] hover:bg-[#A88C4F] text-white font-medium py-3 rounded transition-colors duration-300 cursor-pointer mt-auto"
+                >
+                  Book This Package
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Original Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-16">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}

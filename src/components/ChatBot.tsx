@@ -141,7 +141,7 @@ const ChatBot = () => {
 
   const handleWhatsApp = () => {
     const message = "Hello Own Media! I'm interested in your photography services.";
-    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`);
+    window.open(`https://wa.me/${9496609967}?text=${encodeURIComponent(message)}`);
   };
 
   const toggleChat = () => {
