@@ -4,6 +4,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -295,7 +296,7 @@ const Portfolio = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <span className="relative z-10">Schedule a Consultation</span>
+           <Link href={'/contact'}> <span className="relative z-10">Schedule a Consultation</span></Link>
             <div className="absolute inset-0 bg-gradient-to-r from-[#C1A35F] to-[#E5C97F] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </motion.button>
         </motion.div>

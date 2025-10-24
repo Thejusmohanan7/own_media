@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export default function WeddingPhotography() {
@@ -10,14 +11,16 @@ export default function WeddingPhotography() {
       >
         {/* Added overlay container to prevent layout shift */}
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative z-10 bg-white/70 hover:bg-white transition duration-300 shadow-xl rounded-xl p-4 text-center md:p-8 mx-4">
-          <p className="italic text-sm text-[#333333]">Capturing Your Special Moments</p>
-          <h1 className="text-5xl uppercase font-serif text-[#333333] mt-2">Eternal Memories</h1>
-          <p className="text-lg text-[#333333] mt-4">Wedding Photography & Videography</p>
-          <button className="mt-6 bg-[#C1A35F] hover:bg-[#B09555] text-white px-6 py-2 rounded-full transition duration-300">
-            View Our Work
-          </button>
-        </div>
+        <Link href={'/portfolio'}>
+          <div className="relative z-10 bg-white/70 hover:bg-white transition duration-300 shadow-xl rounded-xl p-4 text-center md:p-8 mx-4">
+            <p className="italic text-sm text-[#333333]">Capturing Your Special Moments</p>
+            <h1 className="text-5xl uppercase font-serif text-[#333333] mt-2">Eternal Memories</h1>
+            <p className="text-lg text-[#333333] mt-4">Wedding Photography & Videography</p>
+            <button className="mt-6 bg-[#C1A35F] hover:bg-[#B09555] text-white px-6 py-2 rounded-full transition duration-300">
+              View Our Work
+            </button>
+          </div>
+        </Link>
       </header>
 
       {/* Rest of the code remains exactly the same */}
@@ -116,9 +119,11 @@ export default function WeddingPhotography() {
         <div className="bg-white/90 hover:bg-white transition duration-300 shadow-xl rounded-xl mx-4 p-8 text-center">
           <h2 className="text-3xl font-serif text-[#333333] mb-4">Ready to Capture Your Day?</h2>
           <p className="text-[#333333] mb-6">Let&apos;s discuss how we can tell your unique love story through our lens.</p>
-          <button className="bg-[#C1A35F] hover:bg-[#B09555] text-white px-8 py-3 rounded-full transition duration-300 font-medium">
-            Contact Us Today
-          </button>
+          <Link href={'/contact'}>
+            <button className="bg-[#C1A35F] hover:bg-[#B09555] text-white px-8 py-3 rounded-full transition duration-300 font-medium">
+              Contact Us Today
+            </button>
+          </Link>
         </div>
       </div>
 

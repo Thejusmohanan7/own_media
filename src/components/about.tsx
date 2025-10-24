@@ -5,6 +5,7 @@ import { useRef, useEffect, useState } from 'react';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Elegant SVG Icons
 const PhotographyIcon = () => (
@@ -225,14 +226,16 @@ const About = () => {
             </div>
 
             {/* CTA Button with elegant hover effect */}
-            <motion.button
-              className="group relative bg-[#232122] hover:bg-[#C1A35F] text-white font-light py-3 md:py-4 px-8 md:px-10 rounded-sm transition-all duration-500 transform hover:-translate-y-1 shadow-md hover:shadow-xl text-sm md:text-base tracking-wide overflow-hidden"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <span className="relative z-10">Discover Our Work</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#C1A35F] to-[#E5C97F] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </motion.button>
+            <Link href={'/portfolio'}>
+              <motion.button
+                className="group relative bg-[#232122] hover:bg-[#C1A35F] text-white font-light py-3 md:py-4 px-8 md:px-10 rounded-sm transition-all duration-500 transform hover:-translate-y-1 shadow-md hover:shadow-xl text-sm md:text-base tracking-wide overflow-hidden"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <span className="relative z-10">Discover Our Work</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#C1A35F] to-[#E5C97F] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
 

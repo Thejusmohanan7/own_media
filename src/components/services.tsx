@@ -4,6 +4,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Elegant SVG Icons for Services
 const WeddingIcon = () => (
@@ -170,23 +171,27 @@ const Services = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
-              <motion.button
-                className="group relative bg-[#232122] hover:bg-[#C1A35F] text-white font-light py-3 md:py-4 px-8 md:px-10 rounded-sm transition-all duration-500 transform hover:-translate-y-1 shadow-md hover:shadow-xl text-sm md:text-base tracking-wide overflow-hidden"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span className="relative z-10">View Pricing</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#C1A35F] to-[#E5C97F] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </motion.button>
+             <Link href={'/service'}>
+                <motion.button
+                  className="group relative bg-[#232122] hover:bg-[#C1A35F] text-white font-light py-3 md:py-4 px-8 md:px-10 rounded-sm transition-all duration-500 transform hover:-translate-y-1 shadow-md hover:shadow-xl text-sm md:text-base tracking-wide overflow-hidden"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span className="relative z-10">View Pricing</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#C1A35F] to-[#E5C97F] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </motion.button>
+             </Link>
               
-              <motion.button
-                className="group relative bg-transparent border border-[#232122] text-[#232122] hover:text-white font-light py-3 md:py-4 px-8 md:px-10 rounded-sm transition-all duration-500 transform hover:-translate-y-1 shadow-md hover:shadow-xl text-sm md:text-base tracking-wide overflow-hidden"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span className="relative z-10">Get in Touch</span>
-                <div className="absolute inset-0 bg-[#232122] opacity-0 group-hover:opacity-100 transition-all duration-500 z-0"></div>
-              </motion.button>
+            <Link href={'/contact'}>
+                <motion.button
+                  className="group relative bg-transparent border border-[#232122] text-[#232122] hover:text-white font-light py-3 md:py-4 px-8 md:px-10 rounded-sm transition-all duration-500 transform hover:-translate-y-1 shadow-md hover:shadow-xl text-sm md:text-base tracking-wide overflow-hidden"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span className="relative z-10">Get in Touch</span>
+                  <div className="absolute inset-0 bg-[#232122] opacity-0 group-hover:opacity-100 transition-all duration-500 z-0"></div>
+                </motion.button>
+            </Link>
             </div>
             
             <p className="text-sm text-[#7D6E5B]">

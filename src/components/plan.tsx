@@ -2,6 +2,7 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Link from 'next/link';
 import { useRef, useState, useEffect, useMemo } from 'react';
 
 const ModernTimeline = () => {
@@ -305,14 +306,16 @@ const ModernTimeline = () => {
             Let&apos;s start planning how we can capture your unique love story
             together.
           </p>
-          <motion.button
-            className="group relative bg-[#C1A35F] hover:bg-[#B29455] text-white font-medium py-3 md:py-4 px-8 md:px-10 rounded-sm transition-all duration-500 transform hover:-translate-y-1 shadow-lg hover:shadow-xl hover:shadow-[#C1A35F]/30 text-sm md:text-base tracking-wide overflow-hidden"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <span className="relative z-10">Start Your Journey</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-white to-[#E5C97F] opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-          </motion.button>
+          <Link href={'/contact'}>
+            <motion.button
+              className="group relative bg-[#C1A35F] hover:bg-[#B29455] text-white font-medium py-3 md:py-4 px-8 md:px-10 rounded-sm transition-all duration-500 transform hover:-translate-y-1 shadow-lg hover:shadow-xl hover:shadow-[#C1A35F]/30 text-sm md:text-base tracking-wide overflow-hidden"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <span className="relative z-10">Start Your Journey</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white to-[#E5C97F] opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

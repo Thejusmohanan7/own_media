@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Heart, MapPin, Play, ArrowRight, Plus, Film, Settings, Lightbulb, Clock } from 'lucide-react';
+import Link from 'next/link';
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -406,7 +407,7 @@ export default function PortfolioPage() {
               whileTap={{ scale: 0.98 }}
               className="bg-[#C1A35F] text-white font-medium py-4 px-10 rounded-full text-lg relative overflow-hidden group"
             >
-              <span className="relative z-10">Schedule a Consultation</span>
+              <Link href={'/contact'}><span className="relative z-10">Schedule a Consultation</span></Link>
               <motion.div 
                 className="absolute inset-0 bg-gradient-to-r from-[#D4B87A] to-[#C1A35F] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 initial={{ x: "-100%" }}
