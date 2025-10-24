@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 // Import professional icons (you'll need to install these or use your own)
 import { Heart, Flower, Sparkles, Bird } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Service4() {
   const ref = useRef(null);
@@ -145,16 +146,18 @@ export default function Service4() {
               
               {/* Text with enhanced animation */}
               <span className="relative z-10 flex items-center justify-center">
-                <motion.span
-                  initial={{ letterSpacing: "0em" }}
-                  animate={{ 
-                    letterSpacing: isHovered ? "0.05em" : "0em",
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="font-medium tracking-wide"
-                >
-                  Start Planning Today
-                </motion.span>
+               <Link href={'/contact'}>
+                  <motion.span
+                    initial={{ letterSpacing: "0em" }}
+                    animate={{ 
+                      letterSpacing: isHovered ? "0.05em" : "0em",
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="font-medium tracking-wide"
+                  >
+                    Start Planning Today
+                  </motion.span>
+               </Link>
                 <motion.span
                   initial={{ x: 0, opacity: 0.8 }}
                   animate={{ 

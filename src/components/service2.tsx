@@ -240,9 +240,9 @@ export default function Service2() {
                 </div>
               </div>
               
-              <button className="bg-[#C1A35F] hover:bg-[#A88C4F] text-white font-medium py-2 px-6 rounded transition-colors duration-300">
+              {/* <button className="bg-[#C1A35F] hover:bg-[#A88C4F] text-white font-medium py-2 px-6 rounded transition-colors duration-300">
                 View Portfolio
-              </button>
+              </button> */}
             </div>
           </motion.div>
         </div>

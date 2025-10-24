@@ -171,9 +171,9 @@ export default function Service3() {
                 </div>
               </div>
               
-              <button className="bg-[#C1A35F] hover:bg-[#A88C4F] text-white font-medium py-2 px-6 rounded transition-colors duration-300">
+              {/* <button className="bg-[#C1A35F] hover:bg-[#A88C4F] text-white font-medium py-2 px-6 rounded transition-colors duration-300">
                 Explore Designs
-              </button>
+              </button> */}
             </div>
           </motion.div>
           
