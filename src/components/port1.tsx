@@ -113,7 +113,7 @@ export default function PortfolioPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#F5F3EF] via-white to-[#F5F3EF]">
       {/* Hero Section */}
-      <section className="relative pt-20 md:pt-28 overflow-hidden">
+      <section className="relative pt-20 md:pt-28 overflow-hidden mt-8">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

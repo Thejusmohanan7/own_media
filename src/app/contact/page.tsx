@@ -1,6 +1,6 @@
 "use client"
 import { useState, ChangeEvent, FormEvent } from 'react';
-import Sample2 from '@/components/sample2';  
+import Sample2 from '@/components/sample2';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -40,11 +40,10 @@ const ContactSection = () => {
 
 
 
-   <div>
-    <div>
-      <Sample2/>
-    </div>
-   
+    <div className='mt-8'>
+      <div>
+        <Sample2 />
+      </div>
       <section id="contact" className="py-20 px-4 md:px-8 bg-[#F5F3EF]">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -56,12 +55,12 @@ const ContactSection = () => {
               Ready to capture your special day? Let&apos;s discuss how we can tell your unique love story through our lens.
             </p>
           </div>
-  
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
             <div>
               <h3 className="text-2xl font-serif font-bold text-[#232122] mb-6">Contact Information</h3>
-              
+
               <div className="space-y-6 mb-8">
                 <div className="flex items-start">
                   <div className=" bg-opacity-10 p-3 rounded-lg mr-4">
@@ -71,11 +70,11 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-[#232122]">Phone</h4>
-                    <p className="text-[#333333]">+1 (555) 123-4567</p>
+                    <p className="text-[#333333]">+91 94966099677</p>
                     <p className="text-sm text-[#666666]">Mon-Fri from 9am to 6pm</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className=" bg-opacity-10 p-3 rounded-lg mr-4">
                     <svg className="w-6 h-6 text-[#C1A35F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,7 +87,7 @@ const ContactSection = () => {
                     <p className="text-sm text-[#666666]">We&apos;ll respond within 24 hours</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className=" bg-opacity-10 p-3 rounded-lg mr-4">
                     <svg className="w-6 h-6 text-[#C1A35F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,14 +96,14 @@ const ContactSection = () => {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#232122]">Studio</h4>
-                    <p className="text-[#333333]">123 Photography Lane</p>
-                    <p className="text-[#333333]">New York, NY 10001</p>
-                    <p className="text-sm text-[#666666]">By appointment only</p>
+                    <h4 className="font-semibold text-[#232122]">Krishna auditorium building</h4>
+                    <p className="text-[#333333]">opposite chakkumarassery temple</p>
+                    <p className="text-[#333333]">MURAVANTHIRUTH</p>
+                    <p className="text-sm text-[#666666]"> North Paravoor</p>
                   </div>
                 </div>
               </div>
-  
+
               {/* Social Links */}
               <div>
                 <h4 className="font-serif font-semibold text-[#232122] mb-4">Follow Us</h4>
@@ -127,11 +126,11 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-  
+
             {/* Contact Form */}
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h3 className="text-2xl font-serif font-bold text-[#232122] mb-6">Send us a Message</h3>
-              
+
               {isSubmitted ? (
                 <div className="bg-[#C1A35F] bg-opacity-10 border border-[#C1A35F] border-opacity-30 rounded-lg p-6 text-center">
                   <svg className="w-12 h-12 text-[#C1A35F] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -168,7 +167,7 @@ const ContactSection = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="weddingDate" className="block text-sm font-medium text-[#333333] mb-2">Wedding Date</label>
@@ -198,20 +197,20 @@ const ContactSection = () => {
                       </select>
                     </div>
                   </div>
-                  
+
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-[#333333] mb-2">Your Message</label>
                     <textarea
-    id="message"
-    name="message"
-    value={formData.message}
-    onChange={handleChange}
-    className="w-full px-4 py-3 border border-[#E5E5E5] rounded-lg focus:ring-2 focus:ring-[#C1A35F] focus:border-transparent transition-all"
-    rows={5} // ✅ Fix: number, not string
-  ></textarea>
-  
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-[#E5E5E5] rounded-lg focus:ring-2 focus:ring-[#C1A35F] focus:border-transparent transition-all"
+                      rows={5} // ✅ Fix: number, not string
+                    ></textarea>
+
                   </div>
-                  
+
                   <button
                     type="submit"
                     className="w-full bg-[#C1A35F] hover:bg-[#b09352] text-white font-medium py-3 px-6 rounded-lg transition-colors"
@@ -224,7 +223,7 @@ const ContactSection = () => {
           </div>
         </div>
       </section>
-   </div>
+    </div>
   );
 };
 
