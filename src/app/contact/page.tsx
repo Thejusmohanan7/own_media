@@ -37,9 +37,6 @@ const ContactSection = () => {
     }, 3000);
   };
   return (
-
-
-
     <div className='mt-8'>
       <div>
         <Sample2 />

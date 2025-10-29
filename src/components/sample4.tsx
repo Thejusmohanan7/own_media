@@ -52,8 +52,8 @@ const Sample4: React.FC = () => {
               width={400}
               height={600}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
-              <p className="text-white text-sm font-light">Bride Preparation</p>
+            <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
+              {/* <p className="text-white text-sm font-light">Bride Preparation</p> */}
             </div>
           </div>
           <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-100 relative">
@@ -64,8 +64,8 @@ const Sample4: React.FC = () => {
               width={400}
               height={500}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
-              <p className="text-white text-sm font-light">Bridal Bouquet</p>
+            <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
+              {/* <p className="text-white text-sm font-light">Bridal Bouquet</p> */}
             </div>
           </div>
           <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-200 relative">
@@ -76,8 +76,8 @@ const Sample4: React.FC = () => {
               width={400}
               height={600}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
-              <p className="text-white text-sm font-light">Romantic Moment</p>
+            <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
+              {/* <p className="text-white text-sm font-light">Romantic Moment</p> */}
             </div>
           </div>
         </div>
@@ -92,8 +92,8 @@ const Sample4: React.FC = () => {
               width={400}
               height={500}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
-              <p className="text-white text-sm font-light">Ceremony</p>
+            <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
+              {/* <p className="text-white text-sm font-light">Ceremony</p> */}
             </div>
           </div>
           <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-250 relative">
@@ -104,8 +104,8 @@ const Sample4: React.FC = () => {
               width={400}
               height={600}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
-              <p className="text-white text-sm font-light">Wedding Rings</p>
+            <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
+              {/* <p className="text-white text-sm font-light">Wedding Rings</p> */}
             </div>
           </div>
           <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-300 relative">
@@ -116,8 +116,8 @@ const Sample4: React.FC = () => {
               width={400}
               height={600}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
-              <p className="text-white text-sm font-light">Couple Portrait</p>
+            <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
+              {/* <p className="text-white text-sm font-light">Couple Portrait</p> */}
             </div>
           </div>
         </div>
@@ -132,8 +132,8 @@ const Sample4: React.FC = () => {
               width={400}
               height={500}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
-              <p className="text-white text-sm font-light">Venue Details</p>
+            <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
+              {/* <p className="text-white text-sm font-light">Venue Details</p> */}
             </div>
           </div>
           <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-350 relative">
@@ -144,8 +144,8 @@ const Sample4: React.FC = () => {
               width={400}
               height={600}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
-              <p className="text-white text-sm font-light">Celebration</p>
+            <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
+              {/* <p className="text-white text-sm font-light">Celebration</p> */}
             </div>
           </div>
           <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-400 relative">
@@ -156,8 +156,8 @@ const Sample4: React.FC = () => {
               width={400}
               height={500}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
-              <p className="text-white text-sm font-light">Vows</p>
+            <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
+              {/* <p className="text-white text-sm font-light">Vows</p> */}
             </div>
           </div>
         </div>
@@ -172,8 +172,8 @@ const Sample4: React.FC = () => {
               width={400}
               height={500}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
-              <p className="text-white text-sm font-light">Newlyweds</p>
+            <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
+              {/* <p className="text-white text-sm font-light">Newlyweds</p> */}
             </div>
           </div>
           <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-450 relative">
@@ -184,8 +184,8 @@ const Sample4: React.FC = () => {
               width={400}
               height={600}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
-              <p className="text-white text-sm font-light">Decorations</p>
+            <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end p-4">
+              {/* <p className="text-white text-sm font-light">Decorations</p> */}
             </div>
           </div>
         </div>
