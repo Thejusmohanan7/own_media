@@ -17,67 +17,71 @@ export default function Service2() {
 
   const packages = [
     {
-      title: "Bride & Groom (Both Site) Package-01",
-      price: "95,000",
+      title: "Hindu Wedding Package - BRIDE SIDE",
+      price: "50,000",
       popular: false,
       icon: <Camera className="w-6 h-6" />,
       features: [
-        "Pre Wedding - 1 Photographer",
-        "Wedding Pre & Wedding Day Coverage",
-        "1 Photographer + 1 Videographer (Bride Site)",
-        "1 Photographer + 1 Videographer (Groom Site)",
-        "Traditional & Candid Photography",
-        "Traditional & Candid Videography",
-        "Highlight (1080P FULL HD)",
-        "Wedding Reef (1080P FULL HD)",
-        "Full Function Videos (1080P FULL HD)",
-        "2 Set 100 Pages Album",
-        "Soft Copies of All Photos",
-        "Complimentary - 4 Set Photo Frame Calendar & Mini Book"
-      ]
+        "Wedding Eve - Photo (Video optional +₹4000)",
+        "Wedding Day - 1 Still Camera + 1 Video Camera",
+        "40 leaf (80 page) HD Album with Special leaf",
+        "Extra Leaf: ₹650 each",
+        "Table top calendar, Photo Frame, Mini Book",
+        "HD Video Highlights",
+        "Full Video Coverage",
+        "Free Pre-wedding Shoot (Photo only)"
+      ],
+      instagram: "https://www.instagram.com/ownmedia_wedding_planner?igsh=MTVjamN1ZHJ5dTNxeg=="
     },
     {
-      title: "Bride & Groom (Both Site) Package-02",
-      price: "135,000",
+      title: "Hindu Wedding Package - BOTH SIDE",
+      price: "120,000",
       popular: true,
       icon: <Video className="w-6 h-6" />,
       features: [
-        "Pre Wedding - 1 Photographer & 1 Videographer",
-        "Wedding Pre / Engagement Pre, Engagement Day & Wedding Day",
-        "1 Photographer + 1 Videographer (Bride Site)",
-        "1 Photographer + 1 Videographer (Groom Site)",
-        "Traditional & Candid Photography",
-        "Traditional & Candid Videography",
-        "Engagement + Wedding Combined Highlight (1080P FULL HD)",
-        "Engagement Reef (1080P FULL HD)",
-        "Wedding Reef (1080P FULL HD)",
-        "Full Function Videos (1080P FULL HD)",
-        "2 Set 100 Pages Album",
-        "Soft Copies of All Photos",
-        "Complimentary - 4 Set Photo Frame Calendar & Mini Book"
-      ]
+        "GROOM SIDE: Wedding Day - 1 Still + 1 Video Camera",
+        "GROOM SIDE: Wedding Reception - 1 Still + 1 Video Camera",
+        "GROOM SIDE: 50 leaf HD Album with Special leaf",
+        "BRIDE SIDE: Wedding Eve - 1 Still + 1 Video Camera",
+        "BRIDE SIDE: Wedding Day - 1 Still + 1 Video Camera",
+        "BRIDE SIDE: 50 leaf HD Album with Special leaf",
+        "Extra Leaf: ₹650 each",
+        "Table top calendar, Photo Frame, Mini Book",
+        "HD Video Highlights & Full Length Videos",
+        "Complementary Pre-wed or Post-wed Shoot (Still Only)"
+      ],
+      instagram: "https://www.instagram.com/ownmedia_wedding_planner?igsh=MTVjamN1ZHJ5dTNxeg=="
     },
     {
-      title: "Package-01",
-      price: "45,000",
+      title: "Christian Wedding Package - BOTH SIDE",
+      price: "160,000",
       popular: false,
       icon: <Heart className="w-6 h-6" />,
       features: [
-        "Wedding Pre & Wedding Day Coverage",
-        "1 Photographer + 1 Videographer",
-        "Highlight (1080P FULL HD)",
-        "Wedding Reef (1080P FULL HD)",
-        "100 Pages Album",
-        "Soft Copies of All Photos",
-        "Complimentary - 2 Set Photo Frame Calendar & Mini Book"
-      ]
+        "GROOM SIDE: Engagement Day - 1 Still + 1 Video Camera",
+        "GROOM SIDE: Wedding Eve - 1 Still + 1 Video Camera",
+        "GROOM SIDE: Wedding Day - 1 Still + 1 Video Camera",
+        "BRIDE SIDE: Engagement Day - 1 Still + 1 Video Camera",
+        "BRIDE SIDE: Wedding Eve - 1 Still + 1 Video Camera",
+        "BRIDE SIDE: Wedding Day - 1 Still + 1 Video Camera",
+        "TWO 50 leaf (100 leaf total) HD Albums with Special leaf",
+        "Extra Leaf: ₹650 each",
+        "Table top calendar, Photo Frame, Mini Book",
+        "HD Video Highlights & Full Length Videos",
+        "Free Pre-wed or Post-wed Shoot (Photo & Video)"
+      ],
+      instagram: "https://www.instagram.com/ownmedia_wedding_planner?igsh=MTVjamN1ZHJ5dTNxeg=="
     }
   ];
 
-  const handleWhatsAppClick = (pkgTitle: string, pkgPrice: string) => {
-    const message = `Hi! I am interested in booking the ${pkgTitle} package for ₹${pkgPrice}. Please provide more details.`;
+  const handleWhatsAppClick = (pkgTitle: string, pkgPrice: string, instagramUrl: string) => {
+    const message = `Hi! I am interested in booking the ${pkgTitle} package for ₹${pkgPrice}. Please provide more details.\n\nInstagram: ${instagramUrl}`;
     const whatsappUrl = `https://wa.me/919496609967?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
+  };
+
+  const handleInstagramClick = (url: string) => {
+    window.open(url, '_blank');
   };
 
   return (
@@ -96,8 +100,11 @@ export default function Service2() {
           style={{ opacity }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-serif text-[#232122] mb-4">Photography & Videography Packages</h2>
+          <h2 className="text-3xl md:text-4xl font-serif text-[#232122] mb-4">Own Media Wedding Packages</h2>
           <div className="w-20 h-1 bg-[#C1A35F] mx-auto"></div>
+          <p className="text-[#333333] mt-4 max-w-2xl mx-auto">
+            Professional photography & videography packages tailored for Hindu and Christian weddings
+          </p>
         </motion.div>
         
         {/* Packages Grid */}
@@ -142,12 +149,24 @@ export default function Service2() {
                   ))}
                 </ul>
                 
-                <button 
-                  onClick={() => handleWhatsAppClick(pkg.title, pkg.price)}
-                  className="w-full bg-[#C1A35F] hover:bg-[#A88C4F] text-white font-medium py-3 rounded transition-colors duration-300 cursor-pointer mt-auto"
-                >
-                  Book This Package
-                </button>
+                <div className="flex flex-col gap-3 mt-auto">
+                  <button 
+                    onClick={() => handleInstagramClick(pkg.instagram)}
+                    className="w-full bg-[#E4405F] hover:bg-[#D32D4F] text-white font-medium py-2 px-4 rounded transition-colors duration-300 cursor-pointer flex items-center justify-center gap-2"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.088c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.088c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
+                    </svg>
+                    View Instagram Portfolio
+                  </button>
+                  
+                  <button 
+                    onClick={() => handleWhatsAppClick(pkg.title, pkg.price, pkg.instagram)}
+                    className="w-full bg-[#C1A35F] hover:bg-[#A88C4F] text-white font-medium py-3 rounded transition-colors duration-300 cursor-pointer"
+                  >
+                    Book This Package
+                  </button>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -170,7 +189,7 @@ export default function Service2() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end p-6">
-                <h3 className="text-white text-xl font-serif">Capturing Precious Moments</h3>
+                <h3 className="text-white text-xl font-serif">Professional Wedding Coverage</h3>
               </div>
             </div>
             
@@ -202,47 +221,55 @@ export default function Service2() {
             className="relative"
           >
             <div className="bg-[#F5F3EF] p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-serif text-[#232122] mb-4">Capture Every Moment</h3>
+              <h3 className="text-2xl font-serif text-[#232122] mb-4">Own Media Wedding Services</h3>
               <p className="text-[#333333] mb-4">
-                Our team of professional photographers and videographers will beautifully document your 
-                wedding day, creating timeless memories you&apos;ll cherish forever.
+                Specializing in Hindu and Christian wedding photography & videography. We capture every precious 
+                moment from engagement to reception, creating beautiful memories that last a lifetime.
               </p>
               <ul className="text-[#333333] mb-6 space-y-2">
                 <li className="flex items-center">
                   <span className="text-[#C1A35F] mr-2">✓</span>
-                  Professional photography
+                  Bride & Groom side coverage
                 </li>
                 <li className="flex items-center">
                   <span className="text-[#C1A35F] mr-2">✓</span>
-                  Cinematic videography
+                  HD Albums with special leaves
                 </li>
                 <li className="flex items-center">
                   <span className="text-[#C1A35F] mr-2">✓</span>
-                  Drone footage
+                  Video highlights & full coverage
                 </li>
                 <li className="flex items-center">
                   <span className="text-[#C1A35F] mr-2">✓</span>
-                  Custom albums & packages
+                  Pre & post wedding shoots
                 </li>
               </ul>
               
               <div className="mb-6">
-                <h4 className="text-lg font-medium text-[#232122] mb-2">Package Options</h4>
+                <h4 className="text-lg font-medium text-[#232122] mb-2">What's Included</h4>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white p-3 rounded text-center">
-                    <p className="font-medium text-[#C1A35F]">Essential</p>
-                    <p className="text-sm text-[#333333]">6 hours coverage</p>
+                    <p className="font-medium text-[#C1A35F]">All Packages</p>
+                    <p className="text-sm text-[#333333]">HD Albums & Videos</p>
                   </div>
                   <div className="bg-white p-3 rounded text-center">
                     <p className="font-medium text-[#C1A35F]">Premium</p>
-                    <p className="text-sm text-[#333333]">Full day coverage</p>
+                    <p className="text-sm text-[#333333]">Both side coverage</p>
                   </div>
                 </div>
               </div>
               
-              {/* <button className="bg-[#C1A35F] hover:bg-[#A88C4F] text-white font-medium py-2 px-6 rounded transition-colors duration-300">
-                View Portfolio
-              </button> */}
+              <div className="flex items-center gap-4">
+                <button 
+                  onClick={() => handleInstagramClick("https://www.instagram.com/ownmedia_wedding_planner?igsh=MTVjamN1ZHJ5dTNxeg==")}
+                  className="bg-[#E4405F] hover:bg-[#D32D4F] text-white font-medium py-2 px-4 rounded transition-colors duration-300 flex items-center gap-2"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.088c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.088c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
+                  </svg>
+                  Follow on Instagram
+                </button>
+              </div>
             </div>
           </motion.div>
         </div>

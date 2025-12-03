@@ -105,7 +105,6 @@ const Footer = () => {
                 <p className="text-white">info@ownmedia.com</p>
               </div>
             </div>
-
             <div className="flex items-center justify-start">
               <div className="mr-3 text-[#C1A35F]">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

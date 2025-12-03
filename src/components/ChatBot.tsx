@@ -239,7 +239,6 @@ const ChatBot = () => {
                     )}
                   </div>
                 ))}
-                
                 {/* Quick Questions */}
                 {showOptions && (
                   <div className="space-y-3 sm:space-y-4">
@@ -260,7 +259,6 @@ const ChatBot = () => {
                         ))}
                       </div>
                     </div>
-
                     {/* Quality Assurance Note */}
                     <div className="text-center">
                       <p className="text-xs text-gray-500">
@@ -272,7 +270,6 @@ const ChatBot = () => {
               </div>
               <div ref={messagesEndRef} />
             </div>
-
             {/* Contact Buttons - Responsive */}
             <div className="border-t border-gray-700 p-3 sm:p-4 bg-gray-800">
               <div className="flex space-x-2 sm:space-x-3">
@@ -283,7 +280,6 @@ const ChatBot = () => {
                   <Phone size={16} className="sm:size-5" />
                   <span>Call Now</span>
                 </button>
-                
                 <button
                   onClick={handleWhatsApp}
                   className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 sm:py-3 px-2 sm:px-4 rounded-lg flex items-center justify-center space-x-1 sm:space-x-2 text-xs sm:text-sm font-medium transition-colors duration-200"

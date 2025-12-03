@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// Elegant SVG Icons
+//SVG Icons
 const PhotographyIcon = () => (
   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M12 16C13.6569 16 15 14.6569 15 13C15 11.3431 13.6569 10 12 10C10.3431 10 9 11.3431 9 13C9 14.6569 10.3431 16 12 16Z" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -187,14 +187,12 @@ const About = () => {
             <h3 className="text-3xl md:text-4xl font-playfair font-light text-[#232122] mb-6 md:mb-8 leading-tight">
               Creating Timeless Memories <span className="block text-[#C1A35F]">Since 2010</span>
             </h3>
-            
             <p className="text-[#5A5248] mb-6 leading-relaxed font-light">
               At <span className="font-medium">Own Media</span>, we don&apos;t just take pictures—we craft visual stories that embody the 
               emotion, beauty, and unique connection of your special day. With over a decade of 
               experience, we&apos;ve mastered the art of capturing those fleeting moments that become 
               cherished memories for generations to come.
             </p>
-            
             <p className="text-[#5A5248] mb-8 leading-relaxed font-light">
               Our approach blends artistic vision with technical expertise, ensuring that each 
               photograph and video reflects your personality and love story. We believe in 

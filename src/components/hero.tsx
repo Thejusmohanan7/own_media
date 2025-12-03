@@ -105,7 +105,6 @@ const HeroSection = () => {
                 priority={index === 0}
               />
             )}
-            
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/30"></div>
             
