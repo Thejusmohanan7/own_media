@@ -200,7 +200,7 @@ const About = () => {
             </p>
 
             {/* Features list with elegant icons */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 mb-8 md:mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 mb-8 md:mb-28">
               {[
                 { text: "Natural & Candid Photography", icon: <PhotographyIcon /> },
                 { text: "4K Cinematic Videography", icon: <VideographyIcon /> },

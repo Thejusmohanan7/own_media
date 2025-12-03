@@ -1,240 +1,448 @@
-// components/Services.tsx
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { SplitText } from 'gsap/SplitText';
 
-// Elegant SVG Icons for Services
-const WeddingIcon = () => (
-  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17 11.5V7.5C17 6.83696 16.7366 6.20107 16.2678 5.73223C15.7989 5.26339 15.163 5 14.5 5H9.5C8.83696 5 8.20107 5.26339 7.73223 5.73223C7.26339 6.20107 7 6.83696 7 7.5V11.5M17 11.5H7M17 11.5V18.5C17 19.163 16.7366 19.7989 16.2678 20.2678C15.7989 20.7366 15.163 21 14.5 21H9.5C8.83696 21 8.20107 20.7366 7.73223 20.2678C7.26339 19.7989 7 19.163 7 18.5V11.5" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M12 15C12.8284 15 13.5 14.3284 13.5 13.5C13.5 12.6716 12.8284 12 12 12C11.1716 12 10.5 12.6716 10.5 13.5C10.5 14.3284 11.1716 15 12 15Z" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M8.5 5V3.5C8.5 3.23478 8.60536 2.98043 8.79289 2.79289C8.98043 2.60536 9.23478 2.5 9.5 2.5H14.5C14.7652 2.5 15.0196 2.60536 15.2071 2.79289C15.3946 2.98043 15.5 3.23478 15.5 3.5V5" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M21 12.5C20.5 13.5 19.5 15.5 17.5 16.5" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M3 12.5C3.5 13.5 4.5 15.5 6.5 16.5" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
+gsap.registerPlugin(SplitText);
 
-const EngagementIcon = () => (
-  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 21.5C17.2467 21.5 21.5 17.2467 21.5 12C21.5 6.75329 17.2467 2.5 12 2.5C6.75329 2.5 2.5 6.75329 2.5 12C2.5 17.2467 6.75329 21.5 12 21.5Z" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M9.5 9.5C9.5 9.5 10.5 8.5 12 8.5C13.5 8.5 14.5 9.5 14.5 9.5" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M10.5 13.5C10.5 13.5 11.5 14.5 12 14.5C12.5 14.5 13.5 13.5 13.5 13.5" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M8 16.5C8 16.5 10.5 18.5 12 18.5C13.5 18.5 16 16.5 16 16.5" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M19 5L15 9" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M5 5L9 9" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M5 19L9 15" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M19 19L15 15" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
+export default function Services() {
+  const collageRef = useRef<HTMLDivElement>(null);
+  const hoverBoxRef = useRef<HTMLDivElement>(null);
+  const hoverMeRef = useRef<HTMLDivElement>(null);
+  const letterRef = useRef<HTMLDivElement>(null);
+  const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
-const PortraitIcon = () => (
-  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V4.5C3 3.96957 3.21071 3.46086 3.58579 3.08579C3.96086 2.71071 4.46957 2.5 5 2.5H19C19.5304 2.5 20.0391 2.71071 20.4142 3.08579C20.7893 3.46086 21 3.96957 21 4.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5Z" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M12 16.5C13.6569 16.5 15 15.1569 15 13.5C15 11.8431 13.6569 10.5 12 10.5C10.3431 10.5 9 11.8431 9 13.5C9 15.1569 10.3431 16.5 12 16.5Z" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M16.5 19.5C16.5 18.3065 16.0259 17.1619 15.182 16.318C14.3381 15.4741 13.1935 15 12 15C10.8065 15 9.66193 15.4741 8.81802 16.318C7.97411 17.1619 7.5 18.3065 7.5 19.5" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
+  // Initialize animation on mount
+  useEffect(() => {
+    if (!collageRef.current || !hoverBoxRef.current || !hoverMeRef.current || !letterRef.current) return;
 
-const VideographyServiceIcon = () => (
-  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M22 8.5V15.5C22 16.163 21.7366 16.7989 21.2678 17.2678C20.7989 17.7366 20.163 18 19.5 18H5.5C4.83696 18 4.20107 17.7366 3.73223 17.2678C3.26339 16.7989 3 16.163 3 15.5V8.5C3 7.83696 3.26339 7.20107 3.73223 6.73223C4.20107 6.26339 4.83696 6 5.5 6H19.5C20.163 6 20.7989 6.26339 21.2678 6.73223C21.7366 7.20107 22 7.83696 22 8.5Z" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M12 15.5C13.933 15.5 15.5 13.933 15.5 12C15.5 10.067 13.933 8.5 12 8.5C10.067 8.5 8.5 10.067 8.5 12C8.5 13.933 10.067 15.5 12 15.5Z" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M18.5 8V16" stroke="#C1A35F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
+    // Set up loader animation
+    const loaders = document.querySelectorAll('.loader');
+    gsap.to(loaders, {
+      transformOrigin: "left bottom",
+      rotate: -100,
+      duration: 2,
+      ease: "sine.in",
+      stagger: {
+        each: 0.3,
+        from: "end"
+      }
+    });
 
-const Services = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
+    // Set default easing
+    gsap.defaults({ ease: "back.out(1.4)" });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 1, 0.3]);
+    // Helper function to set initial transform
+    const setScaleZero = (selector: string, x: string, y: string, rotate: number) => {
+      gsap.set(selector, {
+        transformOrigin: `${x}% ${y}%`,
+        scale: 0,
+        rotate: rotate
+      });
+    };
+
+    // Right pine
+    setScaleZero("#right-pine-big", "0", "90", 30);
+    gsap.set("#right-pine-small", {
+      transformOrigin: "0% 40%",
+      scale: 0,
+      rotate: 40,
+      x: -50,
+      y: 10
+    });
+
+    // Center branch
+    setScaleZero("#center-branch-big", "20", "95", -50);
+
+    // Feathers
+    setScaleZero("#feather_2", "120", "0", -60);
+    setScaleZero("#feather_4", "140", "50", -70);
+    setScaleZero("#feather_3", "120", "140", -100);
+    setScaleZero("#feather_5", "80", "120", -110);
+    setScaleZero("#feather_1", "70", "100", -100);
+
+    // Bird
+    setScaleZero("#bird", "20", "100", -100);
+
+    // Left branches
+    setScaleZero("#left-branch", "100", "90", -100);
+    setScaleZero("#left-pine", "70", "120", -100);
+
+    // Red berries
+    setScaleZero("#red_mi", "0", "50", -150);
+
+    // Leaves
+    setScaleZero("#leaf_1", "90", "80", -60);
+    setScaleZero("#leaf_2", "30", "10", -50);
+    setScaleZero("#leaf_3", "20", "80", -40);
+    setScaleZero("#leaf_4", "70", "10", -50);
+
+    // Top branch
+    setScaleZero("#top-branch-f1", "100", "60", 30);
+    setScaleZero("#top-branch-f2", "50", "70", 30);
+    setScaleZero("#top-branch-f3", "70", "25", -30);
+
+    // Text split
+    const mySplitText = new SplitText("#letter", { type: "chars" });
+
+    // Set text position
+    gsap.set(mySplitText.chars, {
+      transformOrigin: "center center",
+      yPercent: 100
+    });
+
+    // Create main animation timeline
+    const AnimationTL = gsap.timeline({ paused: true });
+
+    AnimationTL.to("#center-branch", { rotate: 15, duration: 1.7 })
+      .to("#leaf_1", { scale: 1, rotate: 0, duration: 1.1 }, 0.1)
+      .to("#leaf_2", { scale: 1, rotate: 0, duration: 1.3 }, 0.2)
+      .to("#leaf_3", { scale: 1, rotate: 0, duration: 1.3 }, 0.1)
+      .to("#leaf_4", { scale: 1, rotate: 0, duration: 1.2 }, 0.1)
+      .to("#feather_2", { scale: 1, rotate: 0, duration: 1.2 }, 0.2)
+      .to("#feather_4", { scale: 1, rotate: 0, duration: 1.4 }, 0.4)
+      .to("#feather_3", { scale: 1, rotate: 0, duration: 1.2 }, 0.3)
+      .to("#feather_5", { scale: 1, rotate: 0, duration: 1.2 }, 0.4)
+      .to("#feather_1", { scale: 1, rotate: 0, duration: 1.3 }, 0.4)
+      .to("#red_mi", { scale: 1, rotate: 0, duration: 1.9 }, 0.6)
+      .to("#left-branch", { scale: 1, rotate: 0, duration: 1.5 }, 0.5)
+      .to("#left-pine", { scale: 1, rotate: 0, duration: 1.3 }, 0.4)
+      .to("#center-branch-big", { scale: 1, rotate: 0, duration: 1.3 }, 0.4)
+      .to("#right-pine-big", { scale: 1, rotate: 0, duration: 1.3 }, 0.5)
+      .to("#right-pine-small", { scale: 1, rotate: 0, x: 0, y: 0, duration: 1.1 }, 0.85)
+      .to("#bird", { scale: 1, rotate: 0, duration: 1.6 }, 0.5)
+      .to("#top-branch-cover", { scaleX: 0, transformOrigin: "left", duration: 2 }, 0.5)
+      .to("#top-branch-f3", { scale: 1, rotate: 0, duration: 1.5 }, 0.9)
+      .to("#top-branch-f2", { scale: 1, rotate: 0, duration: 1.7 }, 1.2)
+      .to("#top-branch-f1", { scale: 1, rotate: 0, duration: 1.7 }, 1.4)
+      .to(
+        mySplitText.chars,
+        {
+          duration: 1.1,
+          yPercent: 0,
+          stagger: {
+            each: 0.1
+          }
+        },
+        0.5
+      );
+
+    timelineRef.current = AnimationTL;
+
+    // Cleanup function
+    return () => {
+      if (timelineRef.current) {
+        timelineRef.current.kill();
+      }
+      mySplitText.revert();
+    };
+  }, []);
+
+  // Handle hover events
+  const handleMouseEnter = () => {
+    if (timelineRef.current && hoverMeRef.current) {
+      timelineRef.current.play();
+      hoverMeRef.current.style.display = 'none';
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (timelineRef.current && hoverMeRef.current) {
+      timelineRef.current.reverse();
+      hoverMeRef.current.style.display = 'block';
+    }
+  };
+
+  // CSS variables
+  const size = 150;
+  const unit = `calc((${size} / 1366) * 1vmin)`;
+  const background = '#F5F3EF';
 
   return (
-    <section id="services" ref={ref} className="relative py-16 md:py-24 px-4 bg-white overflow-hidden">
-      {/* Elegant background pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#C1A35F] rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-[#232122] rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-[#E5C97F] rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
-      </div>
+    <section className="relative w-full min-h- overflow-hidden flex justify-center items-center bg-[#F5F3EF] -top-16">
+      {/* Loaders */}
+      {[...Array(4)].map((_, i) => (
+        <div 
+          key={i}
+          className="loader absolute top-0 left-0 w-[200%] h-full z-[9999]"
+          style={{ 
+            background: `hsl(0, 0%, ${94 - (i * 6)}%)`,
+            backgroundColor: `color-mix(in hsl, #F5F3EF, black ${i * 6}%)`
+          }}
+        />
+      ))}
 
-      <div className="container mx-auto max-w-6xl relative z-10">
-        {/* Section header with elegant underline */}
-        <motion.div 
-          className="text-center mb-16 md:mb-20"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-playfair font-light text-[#232122] mb-6">
-            Our Services
-          </h2>
-          <div className="flex justify-center">
-            <div className="w-24 h-1 bg-[#C1A35F] mx-auto relative">
-              <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-[#C1A35F] rounded-full"></div>
-            </div>
+      {/* Collage Container */}
+      <div 
+        ref={collageRef}
+        className="collage-container relative"
+        style={{ 
+          minWidth: `calc(1366 * ${unit})`,
+          height: `calc(768 * ${unit})`,
+          '--unit': unit,
+          '--background': background,
+        } as React.CSSProperties}
+      >
+        <div id="collage" className="w-full">
+          <div ref={hoverMeRef} id="hoverme" className="absolute italic font-serif text-[#505050] animate-pulse">
+            Hover me
+            <span className="absolute top-1/2 -left-[100%] w-[calc(40*var(--unit))] h-[calc(1*var(--unit))] bg-[#505050]" />
           </div>
-          <p className="text-[#7D6E5B] mt-4 max-w-2xl mx-auto font-light">
-            Comprehensive photography and videography packages tailored to your love story
-          </p>
-        </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            {
-              title: "Wedding Photography",
-              description: "Complete coverage of your special day with artistic, timeless imagery",
-              icon: <WeddingIcon />,
-              image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-            },
-            {
-              title: "Engagement Sessions",
-              description: "Capture the excitement and romance of your engagement period",
-              icon: <EngagementIcon />,
-              image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-            },
-            {
-              title: "Portrait Sessions",
-              description: "Elegant portraits for save-the-dates, announcements, and more",
-              icon: <PortraitIcon />,
-              image: "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-            },
-            {
-              title: "Cinematic Videography",
-              description: "Beautifully crafted films that tell the story of your wedding day",
-              icon: <VideographyServiceIcon />,
-              image: "https://images.unsplash.com/photo-1539622106114-e0df812097e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-            }
-          ].map((service, index) => (
-            <motion.div
-              key={index}
-              className="bg-[#FAF9F7] rounded-sm overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 group relative"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true, margin: "-50px" }}
+          {/* Top Branch */}
+          <img 
+            id="top-branch-f1" 
+            src="https://i.postimg.cc/y8F2yG3P/top-branch-f1.png" 
+            alt=""
+            className="absolute w-[calc(60*var(--unit))]"
+            style={{ top: '17.5%', left: '50.5%' }}
+          />
+          <div 
+            className="top-branch-container absolute"
+            style={{ 
+              width: `calc(540 * ${unit})`,
+              height: `calc(200 * ${unit})`,
+              top: '4.5%',
+              left: '34.5%'
+            }}
+          >
+            <img 
+              id="top-branch-branch" 
+              src="https://i.postimg.cc/xTNwc80B/top-branch-branch.png" 
+              alt=""
+              className="absolute w-[calc(540*var(--unit))]"
+            />
+            <div 
+              id="top-branch-cover" 
+              className="absolute w-full h-full"
+              style={{ background: background }}
+            />
+          </div>
+          <img 
+            id="top-branch-f2" 
+            src="https://i.postimg.cc/K8XdLbjj/top-branch-f2.png" 
+            alt=""
+            className="absolute w-[calc(73*var(--unit))]"
+            style={{ top: '19.5%', left: '58.5%' }}
+          />
+          <img 
+            id="top-branch-f3" 
+            src="https://i.postimg.cc/MG54hjDf/top-branch-f3.png" 
+            alt=""
+            className="absolute w-[calc(73*var(--unit))]"
+            style={{ top: '22.5%', left: '62.1%' }}
+          />
+
+          {/* Feathers */}
+          <img 
+            id="feather_2" 
+            src="https://i.postimg.cc/T1svBWTJ/feather-2.png" 
+            alt=""
+            className="absolute w-[calc(208*var(--unit))]"
+            style={{ top: '62%', left: '24.5%' }}
+          />
+          <img 
+            id="feather_3" 
+            src="https://i.postimg.cc/qqqdmGH7/feather-3.png" 
+            alt=""
+            className="absolute w-[calc(208*var(--unit))]"
+            style={{ top: '22%', left: '22.5%' }}
+          />
+          <img 
+            id="feather_4" 
+            src="https://i.postimg.cc/4dBgbSMM/feather-4.png" 
+            alt=""
+            className="absolute w-[calc(208*var(--unit))]"
+            style={{ top: '63%', left: '20.5%' }}
+          />
+          <img 
+            id="feather_5" 
+            src="https://i.postimg.cc/sDBr7KJ6/feather-5.png" 
+            alt=""
+            className="absolute w-[calc(150*var(--unit))]"
+            style={{ top: '16%', left: '30.5%' }}
+          />
+          <img 
+            id="feather_1" 
+            src="https://i.postimg.cc/3rfhkz20/feather-1.png" 
+            alt=""
+            className="absolute w-[calc(100*var(--unit))]"
+            style={{ top: '19%', left: '35%' }}
+          />
+
+          {/* Bird */}
+          <img 
+            id="bird" 
+            src="https://i.postimg.cc/brsK0N1D/bird.png" 
+            alt=""
+            className="absolute w-[calc(590*var(--unit))]"
+            style={{ top: '24.5%', left: '38.4%' }}
+          />
+
+          {/* Left Side */}
+          <img 
+            id="left-branch" 
+            src="https://i.postimg.cc/QxRrb54X/left-branch.png" 
+            alt=""
+            className="absolute w-[calc(350*var(--unit))]"
+            style={{ top: '41.5%', left: '16.5%' }}
+          />
+          <img 
+            id="left-pine" 
+            src="https://i.postimg.cc/W4VcRVcC/left-pine.png" 
+            alt=""
+            className="absolute w-[calc(520*var(--unit))]"
+            style={{ top: '30.5%', left: '11.5%' }}
+          />
+
+          {/* Middle */}
+          <img 
+            id="red_mi" 
+            src="https://i.postimg.cc/C1v3ffnp/red-mi.png" 
+            alt=""
+            className="absolute w-[calc(160*var(--unit))]"
+            style={{ top: '57%', left: '48%' }}
+          />
+
+          {/* Middle Leaves */}
+          <img 
+            id="leaf_1" 
+            src="https://i.postimg.cc/zv64xZkd/leaf-1.png" 
+            alt=""
+            className="absolute w-[calc(220*var(--unit))]"
+            style={{ top: '40.5%', left: '31.5%' }}
+          />
+          <img 
+            id="leaf_2" 
+            src="https://i.postimg.cc/jjh0t1s5/leaf-2.png" 
+            alt=""
+            className="absolute w-[calc(160*var(--unit))]"
+            style={{ top: '62.5%', left: '41.5%' }}
+          />
+          <img 
+            id="leaf_3" 
+            src="https://i.postimg.cc/440CfVTz/leaf-3.png" 
+            alt=""
+            className="absolute w-[calc(260*var(--unit))]"
+            style={{ top: '50%', left: '40%' }}
+          />
+          <img 
+            id="leaf_4" 
+            src="https://i.postimg.cc/rmpbcFnn/leaf-4.png" 
+            alt=""
+            className="absolute w-[calc(180*var(--unit))]"
+            style={{ top: '56%', left: '35%' }}
+          />
+
+          {/* Middle Branch */}
+          <img 
+            id="center-branch" 
+            src="https://i.postimg.cc/G2h02j2j/center-branch.png" 
+            alt=""
+            className="absolute w-[calc(140*var(--unit))]"
+            style={{ 
+              top: '26%', 
+              left: '35.5%',
+              transformOrigin: '90% bottom',
+              transform: 'rotate(20deg)'
+            }}
+          />
+          <img 
+            id="center-branch-big" 
+            src="https://i.postimg.cc/GpdV7jk1/center-branch-big.png" 
+            alt=""
+            className="absolute w-[calc(300*var(--unit))]"
+            style={{ top: '31%', left: '41%' }}
+          />
+
+          {/* Right Side */}
+          <img 
+            id="right-pine-big" 
+            src="https://i.postimg.cc/vBSKmFCQ/right-pine-big.png" 
+            alt=""
+            className="absolute w-[calc(400*var(--unit))]"
+            style={{ top: '22.5%', left: '49.5%' }}
+          />
+          <img 
+            id="right-pine-small" 
+            src="https://i.postimg.cc/0yD1HQF7/right-pine-small.png" 
+            alt=""
+            className="absolute w-[calc(210*var(--unit))]"
+            style={{ top: '54.5%', left: '63.5%' }}
+          />
+
+          {/* Letter */}
+          <div 
+            id="letter-container" 
+            className="absolute top-1/2 left-1/2 w-[200%] text-center overflow-hidden"
+            style={{ transform: 'translate(-50%, -50%)' }}
+          >
+            <div 
+              ref={letterRef}
+              id="letter" 
+              className="w-full text-[#fffbf2] font-bold font-serif"
+              style={{ 
+                fontSize: `calc(270 * ${unit})`,
+                filter: `drop-shadow(calc(5 * ${unit}) calc(5 * ${unit}) calc(5 * ${unit}) rgba(0, 0, 0, 0.2))`
+              }}
             >
-              <div className="relative h-48 overflow-hidden">
-                <motion.div 
-                  className="absolute inset-0"
-                  style={{ y, opacity }}
-                >
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                </motion.div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-4 right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md z-10">
-                  {service.icon}
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-playfair font-semibold text-[#232122] mb-3">{service.title}</h3>
-                <p className="text-[#5A5248] font-light mb-4">{service.description}</p>
-                <button className="text-[#C1A35F] font-light text-sm flex items-center group-hover:underline">
-                  Learn more
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </button>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Parallax CTA Section */}
-       <motion.div 
-          className="text-center mt-16 pt-12 border-t border-[#E5E0D6] relative overflow-hidden rounded-sm bg-[#FAF9F7]"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          <div className="relative z-10 py-12 px-4">
-            <h3 className="text-2xl md:text-3xl font-playfair font-light text-[#232122] mb-6">
-              Custom Packages Available
-            </h3>
-            <p className="text-[#5A5248] max-w-2xl mx-auto mb-8 font-light text-lg">
-              Every love story is unique. Let us create a personalized package that perfectly captures your vision.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
-             <Link href={'/service'}>
-                <motion.button
-                  className="group relative bg-[#232122] hover:bg-[#C1A35F] text-white font-light py-3 md:py-4 px-8 md:px-10 rounded-sm transition-all duration-500 transform hover:-translate-y-1 shadow-md hover:shadow-xl text-sm md:text-base tracking-wide overflow-hidden"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <span className="relative z-10">View Pricing</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#C1A35F] to-[#E5C97F] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </motion.button>
-             </Link>
-              
-            <Link href={'/contact'}>
-                <motion.button
-                  className="group relative bg-transparent border border-[#232122] text-[#232122] hover:text-white font-light py-3 md:py-4 px-8 md:px-10 rounded-sm transition-all duration-500 transform hover:-translate-y-1 shadow-md hover:shadow-xl text-sm md:text-base tracking-wide overflow-hidden"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <span className="relative z-10">Get in Touch</span>
-                  <div className="absolute inset-0 bg-[#232122] opacity-0 group-hover:opacity-100 transition-all duration-500 z-0"></div>
-                </motion.button>
-            </Link>
+              OWN MEDIA
             </div>
-            
-            <p className="text-sm text-[#7D6E5B]">
-              <svg className="w-4 h-4 inline-block mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 极速快3 0 01-1.933 0L9.854 12.2 6.5 10.266a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clipRule="evenodd"></path>
-              </svg>
-              All packages include a complimentary consultation
-            </p>
           </div>
-        </motion.div>
+
+          {/* Hover Box */}
+          <div 
+            ref={hoverBoxRef}
+            id="hoverBox" 
+            className="block absolute z-[999]"
+            style={{ 
+              top: '25%',
+              left: '40%',
+              width: `calc(120 * ${unit})`,
+              height: `calc(280 * ${unit})`
+            }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          />
+        </div>
       </div>
 
-      {/* Animation styles */}
-      <style jsx>{`
-        .animate-blob {
-          animation: blob 7s infinite;
+      {/* CSS Styles */}
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+        .collage-container {
+          position: relative;
         }
-        
-        .animation-delay-2000 {
-          animation-delay: 2s;
+
+        #hoverme {
+          font-family: 'Playfair Display', serif;
+          animation: hoverme 1.3s infinite alternate;
         }
-        
-        .animation-delay-4000 {
-          animation-delay: 4s;
+
+        @keyframes hoverme {
+          0% { opacity: 0; }
+          100% { opacity: 1; }
         }
-        
-        @keyframes blob {
-          0% {
-            transform: translate(0px, 0px) scale(1);
+
+        #letter {
+          font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman, serif;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+          .collage-container {
+            transform: scale(0.7);
           }
-          33% {
-            transform: translate(30px, -50px) scale(1.1);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-          100% {
-            transform: translate(0px, 0px) scale(1);
+        }
+
+        @media (max-width: 480px) {
+          .collage-container {
+            transform: scale(0.5);
           }
         }
       `}</style>
     </section>
   );
-};
-
-export default Services;
+}

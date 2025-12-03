@@ -12,8 +12,8 @@ function page() {
   return (
     <div>
       <HeroSection/>
-      <About/>
       <Services/>
+      <About/>
       <Portfolio/>
       <Sample1/>
       <TeamSection/>
