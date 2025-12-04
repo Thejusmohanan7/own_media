@@ -6,7 +6,7 @@ import Portfolio from '@/components/portfolio'
 import Consultation from '@/components/plan'
 import TeamSection from '@/components/team'
 import Sample1 from '@/components/sample1'
-
+import Design1 from '@/components/design1'
 
 function page() {
   return (
@@ -14,6 +14,7 @@ function page() {
       <HeroSection/>
       <Services/>
       <About/>
+      <Design1/>
       <Portfolio/>
       <Sample1/>
       <TeamSection/>

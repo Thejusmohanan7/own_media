@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Check, Star, Camera, Video, Heart } from 'lucide-react';
+import { Star, Camera, Video, Heart } from 'lucide-react';
 
 export default function Service2() {
   const ref = useRef(null);
