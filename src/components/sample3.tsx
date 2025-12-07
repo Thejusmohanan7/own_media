@@ -47,8 +47,8 @@ const WeddingGallery: React.FC = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-rose-50 to-amber-50 md:flex md:items-center md:justify-center p-4 md:p-10">
-        <div className="w-full max-w-7xl mx-auto">
+      <div className="min-h-screen bg-gradient-to-br from-rose-50 to-amber-50 md:flex md:items-center md:justify-center p-4 md:p-10 mt-8">
+        <div className="w-full max-w-7xl mx-auto ">
           {/* Header */}
           <div className="text-center mb-8 md:mb-12">
             <h1 className="text-3xl md:text-5xl font-serif font-light text-rose-800 mb-4">
