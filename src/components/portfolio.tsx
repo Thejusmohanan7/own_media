@@ -3,13 +3,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Heart, MapPin, Play, ArrowRight, Plus, Film, Settings, Lightbulb, Clock } from 'lucide-react';
+import { Heart, MapPin, ArrowRight, Plus } from 'lucide-react';
 import Link from 'next/link';
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
-  const [activeProcess, setActiveProcess] = useState(0);
   
   // Portfolio gallery items with Unsplash images
   const portfolioItems = [
@@ -66,42 +65,6 @@ export default function PortfolioPage() {
       description: 'Rustic charm with modern elegance',
       location: 'Sonoma, CA',
       date: 'September 2023'
-    }
-  ];
-
-  // Creative process steps with Unsplash images
-  const processSteps = [
-    {
-      id: 1,
-      title: "Concept & Vision",
-      description: "We start by understanding your unique story and vision to create a cohesive design concept.",
-      icon: Lightbulb,
-      image: "https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      color: "from-blue-50 to-blue-100"
-    },
-    {
-      id: 2,
-      title: "Planning & Design",
-      description: "Our team meticulously plans every detail from color palettes to layout and flow of the event.",
-      icon: Settings,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      color: "from-amber-50 to-amber-100"
-    },
-    {
-      id: 3,
-      title: "Execution",
-      description: "On the day of your event, our team brings the vision to life with precision and care.",
-      icon: Film,
-      image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      color: "from-emerald-50 to-emerald-100"
-    },
-    {
-      id: 4,
-      title: "Final Touches",
-      description: "We add those special finishing touches that transform your event into an unforgettable experience.",
-      icon: Clock,
-      image: "https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      color: "from-purple-50 to-purple-100"
     }
   ];
 
