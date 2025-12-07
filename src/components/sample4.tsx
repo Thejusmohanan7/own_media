@@ -139,7 +139,7 @@ const Sample4: React.FC = () => {
           <div className="overflow-hidden rounded-lg transform transition-all duration-500 opacity-0 translate-y-8 gallery-image delay-350 relative">
             <Image
               className="h-auto max-w-full rounded-lg object-cover object-center transition-all duration-700 hover:scale-110 hover:-rotate-1 cursor-pointer"
-              src="/IMG_7907.JPG"
+              src="/gallery10.JPG"
               alt="Wedding celebration"
               width={400}
               height={600}
