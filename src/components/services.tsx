@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
+import Image from 'next/image';
 
 gsap.registerPlugin(SplitText);
 
@@ -191,13 +192,25 @@ export default function Services() {
           </div>
 
           {/* Top Branch */}
-          <img 
+          <div 
             id="top-branch-f1" 
-            src="https://i.postimg.cc/y8F2yG3P/top-branch-f1.png" 
-            alt=""
-            className="absolute w-[calc(60*var(--unit))]"
-            style={{ top: '17.5%', left: '50.5%' }}
-          />
+            className="absolute"
+            style={{ 
+              top: '17.5%', 
+              left: '50.5%',
+              width: `calc(60 * ${unit})`,
+              height: `auto`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/y8F2yG3P/top-branch-f1.png"
+              alt=""
+              width={60}
+              height={60}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
           <div 
             className="top-branch-container absolute"
             style={{ 
@@ -207,170 +220,384 @@ export default function Services() {
               left: '34.5%'
             }}
           >
-            <img 
+            <div 
               id="top-branch-branch" 
-              src="https://i.postimg.cc/xTNwc80B/top-branch-branch.png" 
-              alt=""
-              className="absolute w-[calc(540*var(--unit))]"
-            />
+              className="absolute"
+              style={{ width: `calc(540 * ${unit})` }}
+            >
+              <Image
+                src="https://i.postimg.cc/xTNwc80B/top-branch-branch.png"
+                alt=""
+                width={540}
+                height={200}
+                style={{ width: '100%', height: 'auto' }}
+                unoptimized
+              />
+            </div>
             <div 
               id="top-branch-cover" 
               className="absolute w-full h-full"
               style={{ background: background }}
             />
           </div>
-          <img 
+          <div 
             id="top-branch-f2" 
-            src="https://i.postimg.cc/K8XdLbjj/top-branch-f2.png" 
-            alt=""
-            className="absolute w-[calc(73*var(--unit))]"
-            style={{ top: '19.5%', left: '58.5%' }}
-          />
-          <img 
+            className="absolute"
+            style={{ 
+              top: '19.5%', 
+              left: '58.5%',
+              width: `calc(73 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/K8XdLbjj/top-branch-f2.png"
+              alt=""
+              width={73}
+              height={73}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
+          <div 
             id="top-branch-f3" 
-            src="https://i.postimg.cc/MG54hjDf/top-branch-f3.png" 
-            alt=""
-            className="absolute w-[calc(73*var(--unit))]"
-            style={{ top: '22.5%', left: '62.1%' }}
-          />
+            className="absolute"
+            style={{ 
+              top: '22.5%', 
+              left: '62.1%',
+              width: `calc(73 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/MG54hjDf/top-branch-f3.png"
+              alt=""
+              width={73}
+              height={73}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
 
           {/* Feathers */}
-          <img 
+          <div 
             id="feather_2" 
-            src="https://i.postimg.cc/T1svBWTJ/feather-2.png" 
-            alt=""
-            className="absolute w-[calc(208*var(--unit))]"
-            style={{ top: '62%', left: '24.5%' }}
-          />
-          <img 
+            className="absolute"
+            style={{ 
+              top: '62%', 
+              left: '24.5%',
+              width: `calc(208 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/T1svBWTJ/feather-2.png"
+              alt=""
+              width={208}
+              height={208}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
+          <div 
             id="feather_3" 
-            src="https://i.postimg.cc/qqqdmGH7/feather-3.png" 
-            alt=""
-            className="absolute w-[calc(208*var(--unit))]"
-            style={{ top: '22%', left: '22.5%' }}
-          />
-          <img 
+            className="absolute"
+            style={{ 
+              top: '22%', 
+              left: '22.5%',
+              width: `calc(208 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/qqqdmGH7/feather-3.png"
+              alt=""
+              width={208}
+              height={208}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
+          <div 
             id="feather_4" 
-            src="https://i.postimg.cc/4dBgbSMM/feather-4.png" 
-            alt=""
-            className="absolute w-[calc(208*var(--unit))]"
-            style={{ top: '63%', left: '20.5%' }}
-          />
-          <img 
+            className="absolute"
+            style={{ 
+              top: '63%', 
+              left: '20.5%',
+              width: `calc(208 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/4dBgbSMM/feather-4.png"
+              alt=""
+              width={208}
+              height={208}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
+          <div 
             id="feather_5" 
-            src="https://i.postimg.cc/sDBr7KJ6/feather-5.png" 
-            alt=""
-            className="absolute w-[calc(150*var(--unit))]"
-            style={{ top: '16%', left: '30.5%' }}
-          />
-          <img 
+            className="absolute"
+            style={{ 
+              top: '16%', 
+              left: '30.5%',
+              width: `calc(150 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/sDBr7KJ6/feather-5.png"
+              alt=""
+              width={150}
+              height={150}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
+          <div 
             id="feather_1" 
-            src="https://i.postimg.cc/3rfhkz20/feather-1.png" 
-            alt=""
-            className="absolute w-[calc(100*var(--unit))]"
-            style={{ top: '19%', left: '35%' }}
-          />
+            className="absolute"
+            style={{ 
+              top: '19%', 
+              left: '35%',
+              width: `calc(100 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/3rfhkz20/feather-1.png"
+              alt=""
+              width={100}
+              height={100}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
 
           {/* Bird */}
-          <img 
+          <div 
             id="bird" 
-            src="https://i.postimg.cc/brsK0N1D/bird.png" 
-            alt=""
-            className="absolute w-[calc(590*var(--unit))]"
-            style={{ top: '24.5%', left: '38.4%' }}
-          />
+            className="absolute"
+            style={{ 
+              top: '24.5%', 
+              left: '38.4%',
+              width: `calc(590 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/brsK0N1D/bird.png"
+              alt=""
+              width={590}
+              height={590}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
 
           {/* Left Side */}
-          <img 
+          <div 
             id="left-branch" 
-            src="https://i.postimg.cc/QxRrb54X/left-branch.png" 
-            alt=""
-            className="absolute w-[calc(350*var(--unit))]"
-            style={{ top: '41.5%', left: '16.5%' }}
-          />
-          <img 
+            className="absolute"
+            style={{ 
+              top: '41.5%', 
+              left: '16.5%',
+              width: `calc(350 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/QxRrb54X/left-branch.png"
+              alt=""
+              width={350}
+              height={350}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
+          <div 
             id="left-pine" 
-            src="https://i.postimg.cc/W4VcRVcC/left-pine.png" 
-            alt=""
-            className="absolute w-[calc(520*var(--unit))]"
-            style={{ top: '30.5%', left: '11.5%' }}
-          />
+            className="absolute"
+            style={{ 
+              top: '30.5%', 
+              left: '11.5%',
+              width: `calc(520 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/W4VcRVcC/left-pine.png"
+              alt=""
+              width={520}
+              height={520}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
 
           {/* Middle */}
-          <img 
+          <div 
             id="red_mi" 
-            src="https://i.postimg.cc/C1v3ffnp/red-mi.png" 
-            alt=""
-            className="absolute w-[calc(160*var(--unit))]"
-            style={{ top: '57%', left: '48%' }}
-          />
+            className="absolute"
+            style={{ 
+              top: '57%', 
+              left: '48%',
+              width: `calc(160 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/C1v3ffnp/red-mi.png"
+              alt=""
+              width={160}
+              height={160}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
 
           {/* Middle Leaves */}
-          <img 
+          <div 
             id="leaf_1" 
-            src="https://i.postimg.cc/zv64xZkd/leaf-1.png" 
-            alt=""
-            className="absolute w-[calc(220*var(--unit))]"
-            style={{ top: '40.5%', left: '31.5%' }}
-          />
-          <img 
+            className="absolute"
+            style={{ 
+              top: '40.5%', 
+              left: '31.5%',
+              width: `calc(220 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/zv64xZkd/leaf-1.png"
+              alt=""
+              width={220}
+              height={220}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
+          <div 
             id="leaf_2" 
-            src="https://i.postimg.cc/jjh0t1s5/leaf-2.png" 
-            alt=""
-            className="absolute w-[calc(160*var(--unit))]"
-            style={{ top: '62.5%', left: '41.5%' }}
-          />
-          <img 
+            className="absolute"
+            style={{ 
+              top: '62.5%', 
+              left: '41.5%',
+              width: `calc(160 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/jjh0t1s5/leaf-2.png"
+              alt=""
+              width={160}
+              height={160}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
+          <div 
             id="leaf_3" 
-            src="https://i.postimg.cc/440CfVTz/leaf-3.png" 
-            alt=""
-            className="absolute w-[calc(260*var(--unit))]"
-            style={{ top: '50%', left: '40%' }}
-          />
-          <img 
+            className="absolute"
+            style={{ 
+              top: '50%', 
+              left: '40%',
+              width: `calc(260 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/440CfVTz/leaf-3.png"
+              alt=""
+              width={260}
+              height={260}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
+          <div 
             id="leaf_4" 
-            src="https://i.postimg.cc/rmpbcFnn/leaf-4.png" 
-            alt=""
-            className="absolute w-[calc(180*var(--unit))]"
-            style={{ top: '56%', left: '35%' }}
-          />
+            className="absolute"
+            style={{ 
+              top: '56%', 
+              left: '35%',
+              width: `calc(180 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/rmpbcFnn/leaf-4.png"
+              alt=""
+              width={180}
+              height={180}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
 
           {/* Middle Branch */}
-          <img 
+          <div 
             id="center-branch" 
-            src="https://i.postimg.cc/G2h02j2j/center-branch.png" 
-            alt=""
-            className="absolute w-[calc(140*var(--unit))]"
+            className="absolute"
             style={{ 
               top: '26%', 
               left: '35.5%',
+              width: `calc(140 * ${unit})`,
               transformOrigin: '90% bottom',
               transform: 'rotate(20deg)'
             }}
-          />
-          <img 
+          >
+            <Image
+              src="https://i.postimg.cc/G2h02j2j/center-branch.png"
+              alt=""
+              width={140}
+              height={140}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
+          <div 
             id="center-branch-big" 
-            src="https://i.postimg.cc/GpdV7jk1/center-branch-big.png" 
-            alt=""
-            className="absolute w-[calc(300*var(--unit))]"
-            style={{ top: '31%', left: '41%' }}
-          />
+            className="absolute"
+            style={{ 
+              top: '31%', 
+              left: '41%',
+              width: `calc(300 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/GpdV7jk1/center-branch-big.png"
+              alt=""
+              width={300}
+              height={300}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
 
           {/* Right Side */}
-          <img 
+          <div 
             id="right-pine-big" 
-            src="https://i.postimg.cc/vBSKmFCQ/right-pine-big.png" 
-            alt=""
-            className="absolute w-[calc(400*var(--unit))]"
-            style={{ top: '22.5%', left: '49.5%' }}
-          />
-          <img 
+            className="absolute"
+            style={{ 
+              top: '22.5%', 
+              left: '49.5%',
+              width: `calc(400 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/vBSKmFCQ/right-pine-big.png"
+              alt=""
+              width={400}
+              height={400}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
+          <div 
             id="right-pine-small" 
-            src="https://i.postimg.cc/0yD1HQF7/right-pine-small.png" 
-            alt=""
-            className="absolute w-[calc(210*var(--unit))]"
-            style={{ top: '54.5%', left: '63.5%' }}
-          />
+            className="absolute"
+            style={{ 
+              top: '54.5%', 
+              left: '63.5%',
+              width: `calc(210 * ${unit})`
+            }}
+          >
+            <Image
+              src="https://i.postimg.cc/0yD1HQF7/right-pine-small.png"
+              alt=""
+              width={210}
+              height={210}
+              style={{ width: '100%', height: 'auto' }}
+              unoptimized
+            />
+          </div>
 
           {/* Letter */}
           <div 

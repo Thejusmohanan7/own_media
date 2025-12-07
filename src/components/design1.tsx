@@ -3,6 +3,27 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+// Define interface for Star class
+interface StarProps {
+  orbital: number;
+  x: number;
+  y: number;
+  yOrigin: number;
+  speed: number;
+  rotation: number;
+  startRotation: number;
+  id: number;
+  collapseBonus: number;
+  color: string;
+  hoverPos: number;
+  expansePos: number;
+  prevR: number;
+  prevX: number;
+  prevY: number;
+  originalY: number;
+  draw: () => void;
+}
+
 export default function Design1() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -27,13 +48,13 @@ export default function Design1() {
     const startTime = new Date().getTime();
     let currentTime = 0;
 
-    const stars: any[] = [];
+    const stars: StarProps[] = []; // Fixed: Changed from any[] to StarProps[]
     let collapse = false;
     let expanse = false;
     let returning = false;
 
     const context = canvas.getContext("2d");
-    if (!context) return; // Early return if context is null
+    if (!context) return;
 
     canvas.width = cw;
     canvas.height = ch;
@@ -66,7 +87,7 @@ export default function Design1() {
 
     setDPI(canvas, 192);
 
-    class Star {
+    class Star implements StarProps {
       orbital: number;
       x: number;
       y: number;
@@ -106,7 +127,6 @@ export default function Design1() {
           this.collapseBonus = 0;
         }
 
-        // Changed from white to black particles
         this.color = 'rgba(0,0,0,' + (1 - ((this.orbital) / 255)) + ')';
         this.hoverPos = centery + (maxorbit / 2) + this.collapseBonus;
         this.expansePos = centery + (this.id % 100) * -10 + (Math.floor(Math.random() * 20) + 1);
@@ -120,7 +140,7 @@ export default function Design1() {
       }
 
       draw() {
-        if (!context) return; // Added null check for context
+        if (!context) return;
 
         if (!expanse && !returning) {
           this.rotation = this.startRotation + (currentTime * this.speed);
@@ -208,12 +228,11 @@ export default function Design1() {
     centerHover.addEventListener('mouseout', handleMouseOut);
 
     function loop() {
-      if (!context) return; // Added null check for context
+      if (!context) return;
 
       const now = new Date().getTime();
       currentTime = (now - startTime) / 50;
 
-      // Changed from dark to white background with lighter fade
       context.fillStyle = 'rgba(255,255,255,0.2)';
       context.fillRect(0, 0, cw, ch);
 
@@ -227,9 +246,8 @@ export default function Design1() {
     }
 
     function init() {
-      if (!context) return; // Added null check for context
+      if (!context) return;
       
-      // Changed from dark to white initial clear
       context.fillStyle = 'rgba(255,255,255,1)';
       context.fillRect(0, 0, cw, ch);
       for (let i = 0; i < 2500; i++) {
