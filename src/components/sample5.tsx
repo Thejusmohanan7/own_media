@@ -38,7 +38,7 @@ const WeddingGallery = () => {
         },
         {
             id: 3,
-            src: "/gallery1.JPG",
+            src: "/gallery1.jpg",
             alt: "Bride's intricate lace details",
             caption: "Every stitch telling a story of anticipation",
             date: "Spring 2024",
@@ -46,7 +46,7 @@ const WeddingGallery = () => {
         },
         {
             id: 4,
-            src: "/gallery2.JPG",
+            src: "/gallery2.jpg",
             alt: "Bouquet of wildflowers",
             caption: "Nature's confection held with trembling joy",
             date: "Spring 2024",
@@ -118,7 +118,7 @@ const WeddingGallery = () => {
         },
         {
             id: 13,
-            src: "/gallery11.JPG",
+            src: "/gallery11.jpg",
             alt: "Reception sparkler exit",
             caption: "Walking through a tunnel of stars into forever",
             date: "Spring 2024",
@@ -126,7 +126,7 @@ const WeddingGallery = () => {
         },
         {
             id: 14,
-            src: "/gallery12.JPG",
+            src: "/gallery12.jpg",
             alt: "Dance floor dip",
             caption: "Falling into love's rhythm without fear",
             date: "Spring 2024",
@@ -134,7 +134,7 @@ const WeddingGallery = () => {
         },
         {
             id: 15,
-            src: "/gallery13.JPG",
+            src: "/gallery13.jpg",
             alt: "Candlelit dinner table",
             caption: "Flickering flames witnessing whispered promises",
             date: "Spring 2024",
