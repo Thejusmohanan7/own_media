@@ -32,10 +32,10 @@ const Sample4: React.FC = () => {
       {/* Header Section */}
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-serif font-light text-rose-900 mb-4">
-          Wedding Gallery
+         Crafting Visual Narratives of Love
         </h1>
         <p className="text-lg text-rose-700 max-w-2xl mx-auto font-light">
-          Capturing timeless moments of love and celebration
+Fine-art wedding photography inspired by elegance, intimacy, and the unique connection you share.
         </p>
         <div className="w-24 h-0.5 bg-rose-300 mx-auto mt-6"></div>
       </div>
@@ -189,13 +189,6 @@ const Sample4: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Footer Text */}
-      <div className="text-center mt-12">
-        <p className="text-rose-600 font-light italic">
-          &quot;Every love story is beautiful, but yours is our favorite to capture.&quot;
-        </p>
       </div>
 
       <style jsx>{`
