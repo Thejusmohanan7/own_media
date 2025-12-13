@@ -7,13 +7,34 @@ import Image from 'next/image';
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+  const [videoError, setVideoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Check for mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      console.log('Is mobile:', mobile, 'Width:', window.innerWidth);
+    };
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener for resize
+    window.addEventListener('resize', checkMobile);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Sample data - replace with your actual video and images
   const heroContent = [
     {
       type: 'video',
       src: '/hero.mp4',
+      mobileSrc: '/VERTICAL REEL.mp4', 
       quote: "Love is composed of a single soul inhabiting two bodies.",
       author: "Aristotle"
     },
@@ -50,7 +71,16 @@ const HeroSection = () => {
 
   // Handle video ended event
   const handleVideoEnd = () => {
+    console.log('Video ended');
     setCurrentSlide(1); // Move to first image after video
+  };
+
+  // Handle video error
+  const handleVideoError = (e: any) => {
+    console.error('Video error:', e);
+    setVideoError(true);
+    // Fallback to next slide if video fails
+    setCurrentSlide(1);
   };
 
   // Navigate to specific slide
@@ -73,6 +103,20 @@ const HeroSection = () => {
     setTimeout(() => setIsPlaying(true), 3000);
   };
 
+  // Get the appropriate video source based on device
+  const getVideoSource = (item: any) => {
+    if (item.type !== 'video') return item.src;
+    
+    const source = isMobile && item.mobileSrc ? item.mobileSrc : item.src;
+    console.log('Video source selected:', source, 'Is mobile:', isMobile);
+    return source;
+  };
+
+  // Log when slide changes
+  useEffect(() => {
+    console.log('Current slide:', currentSlide, 'Type:', heroContent[currentSlide].type);
+  }, [currentSlide]);
+
   return (
     <section className="relative h-screen w-full overflow-hidden -top-16">
       {/* Video/Image background */}
@@ -84,18 +128,33 @@ const HeroSection = () => {
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            {item.type === 'video' ? (
-              <video
-                ref={index === 0 ? videoRef : null}
-                autoPlay
-                muted
-                loop={currentSlide === 0}
-                onEnded={currentSlide === 0 ? handleVideoEnd : undefined}
-                className="w-full h-full object-cover"
-              >
-                <source src={item.src} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+            {item.type === 'video' && index === currentSlide ? (
+              <>
+                <video
+                  ref={index === 0 ? videoRef : null}
+                  autoPlay
+                  muted
+                  loop={currentSlide === 0}
+                  onEnded={currentSlide === 0 ? handleVideoEnd : undefined}
+                  onError={handleVideoError}
+                  className="w-full h-full object-cover"
+                  playsInline
+                  controls={false}
+                  preload="auto"
+                  key={isMobile ? 'mobile' : 'desktop'} // Force re-render when isMobile changes
+                >
+                  <source 
+                    src={getVideoSource(item)} 
+                    type="video/mp4" 
+                  />
+                  Your browser does not support the video tag.
+                </video>
+                {videoError && (
+                  <div className="absolute inset-0 bg-black flex items-center justify-center">
+                    <p className="text-white">Video failed to load. Showing next slide...</p>
+                  </div>
+                )}
+              </>
             ) : (
               <Image
                 src={item.src}
@@ -121,6 +180,7 @@ const HeroSection = () => {
         ))}
       </div>
 
+      {/* Rest of your component remains the same... */}
       {/* Navigation dots */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
         {heroContent.map((_, index) => (
