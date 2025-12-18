@@ -106,7 +106,7 @@ const ContactSection = () => {
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-6 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-medium text-[#C1A35F] mb-6 border border-[#C1A35F]/20 shadow-sm">
               <div className="w-2 h-2 bg-[#C1A35F] rounded-full"></div>
-              Let's Connect
+              Let&apos;s Connect
             </div>
             
             <h2 className="text-5xl md:text-6xl font-serif font-bold text-[#232122] mb-6">
@@ -116,7 +116,7 @@ const ContactSection = () => {
             <div className="w-40 h-1 bg-gradient-to-r from-transparent via-[#C1A35F] to-transparent mx-auto mb-8"></div>
             
             <p className="text-xl text-[#333333] max-w-2xl mx-auto leading-relaxed">
-              Ready to capture your special day? Let's discuss how we can tell your unique 
+              Ready to capture your special day? Let&apos;s discuss how we can tell your unique 
               love story through our lens.
             </p>
           </div>
@@ -194,7 +194,7 @@ const ContactSection = () => {
                       Send us a Message
                     </h3>
                     <p className="text-white/80">
-                      Fill out the form below and we'll get back to you promptly
+                      Fill out the form below and we&apos;ll get back to you promptly
                     </p>
                   </div>
                 </div>
@@ -209,7 +209,7 @@ const ContactSection = () => {
                         Message Sent Successfully!
                       </h4>
                       <p className="text-[#333333] mb-6">
-                        Thank you for reaching out. We've received your message and will 
+                        Thank you for reaching out. We&apos;ve received your message and will 
                         get back to you within 24 hours.
                       </p>
                       <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C1A35F]/10 rounded-full">

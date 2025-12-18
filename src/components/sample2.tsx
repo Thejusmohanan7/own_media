@@ -371,7 +371,7 @@ export default function WeddingExperience() {
                   Ready to Document Your <span className="text-slate-700">Love Story</span>?
                 </h3>
                 <p className="text-slate-600 mb-8 leading-relaxed">
-                  Let's discuss how we can capture your unique journey with authenticity 
+                  Let&apos;s discuss how we can capture your unique journey with authenticity 
                   and artistry, preserving moments that will be cherished for generations.
                 </p>
                 
@@ -390,7 +390,7 @@ export default function WeddingExperience() {
                 </div>
                 
                 <p className="text-slate-500 text-sm mt-6">
-                  Let's create something beautiful together
+                  Let&apos;s create something beautiful together
                 </p>
               </div>
             </div>
