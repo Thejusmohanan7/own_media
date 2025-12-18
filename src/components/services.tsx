@@ -608,7 +608,7 @@ export default function Services() {
             <div 
               ref={letterRef}
               id="letter" 
-              className="w-full text-[#fffbf2] font-bold font-serif"
+              className="w-full text-[#e7dcc5] font-bold font-serif"
               style={{ 
                 fontSize: `calc(270 * ${unit})`,
                 filter: `drop-shadow(calc(5 * ${unit}) calc(5 * ${unit}) calc(5 * ${unit}) rgba(0, 0, 0, 0.2))`
