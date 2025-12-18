@@ -1,8 +1,16 @@
 // components/HeroSection.tsx
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import Image from 'next/image';
+
+interface HeroItem {
+  type: 'video' | 'image';
+  src: string;
+  mobileSrc?: string;
+  quote: string;
+  author: string;
+}
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -11,26 +19,8 @@ const HeroSection = () => {
   const [videoError, setVideoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Check for mobile on mount and resize
-  useEffect(() => {
-    const checkMobile = () => {
-      const mobile = window.innerWidth < 768;
-      setIsMobile(mobile);
-      console.log('Is mobile:', mobile, 'Width:', window.innerWidth);
-    };
-
-    // Initial check
-    checkMobile();
-
-    // Add event listener for resize
-    window.addEventListener('resize', checkMobile);
-
-    // Cleanup
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  // Sample data - replace with your actual video and images
-  const heroContent = [
+  // Use useMemo to prevent recreation on every render
+  const heroContent = useMemo<HeroItem[]>(() => [
     {
       type: 'video',
       src: '/hero.mp4',
@@ -56,7 +46,25 @@ const HeroSection = () => {
       quote: "Where there is love there is life.",
       author: "Mahatma Gandhi"
     }
-  ];
+  ], []);
+
+  // Check for mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      console.log('Is mobile:', mobile, 'Width:', window.innerWidth);
+    };
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener for resize
+    window.addEventListener('resize', checkMobile);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Handle automatic slideshow
   useEffect(() => {
@@ -67,7 +75,7 @@ const HeroSection = () => {
     }, 20000); // Change slide every 20 seconds
 
     return () => clearTimeout(timer);
-  }, [currentSlide, isPlaying, heroContent.length]);
+  }, [currentSlide, isPlaying, heroContent]);
 
   // Handle video ended event
   const handleVideoEnd = () => {
@@ -76,7 +84,7 @@ const HeroSection = () => {
   };
 
   // Handle video error
-  const handleVideoError = (e: any) => {
+  const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     console.error('Video error:', e);
     setVideoError(true);
     // Fallback to next slide if video fails
@@ -104,7 +112,7 @@ const HeroSection = () => {
   };
 
   // Get the appropriate video source based on device
-  const getVideoSource = (item: any) => {
+  const getVideoSource = (item: HeroItem) => {
     if (item.type !== 'video') return item.src;
     
     const source = isMobile && item.mobileSrc ? item.mobileSrc : item.src;
@@ -115,7 +123,7 @@ const HeroSection = () => {
   // Log when slide changes
   useEffect(() => {
     console.log('Current slide:', currentSlide, 'Type:', heroContent[currentSlide].type);
-  }, [currentSlide]);
+  }, [currentSlide, heroContent]);
 
   return (
     <section className="relative h-screen w-full overflow-hidden -top-16">
