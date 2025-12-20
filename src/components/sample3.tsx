@@ -9,27 +9,27 @@ const WeddingGallery: React.FC = () => {
   const weddingImages = [
     {
       src: "/img4.jpg",
-      title: "First Kiss"
+      title: ""
     },
     {
       src: "/img1.JPG",
-      title: "Bridal Portrait"
+      title: ""
     },
     {
       src: "/img2.JPG",
-      title: "Ceremony Moments"
+      title: ""
     },
     {
       src: "/img3.jpg",
-      title: "Reception Joy"
+      title: ""
     },
     {
       src: "/img5.jpg",
-      title: "Dance Floor"
+      title: ""
     },
     {
       src: "/img6.jpg",
-      title: "Romantic Sunset"
+      title: ""
     }
   ];
 

@@ -25,128 +25,128 @@ const WeddingGallery = () => {
             src: "/gallery16.JPG",
             alt: "Bride's delicate veil flowing in the breeze",
             caption: "A whisper of silk catching the morning light",
-            date: "Spring 2024",
-            location: "Garden Chapel"
+            date: "",
+            location: ""
         },
         {
             id: 2,
             src: "/gallery15.JPG",
             alt: "First look through the window",
             caption: "Hearts meeting before eyes do",
-            date: "Spring 2024",
-            location: "Historic Manor"
+            date: "",
+            location: ""
         },
         {
             id: 3,
             src: "/gallery1.jpg",
             alt: "Bride's intricate lace details",
             caption: "Every stitch telling a story of anticipation",
-            date: "Spring 2024",
-            location: "Preparation Suite"
+            date: "",
+            location: ""
         },
         {
             id: 4,
             src: "/gallery2.jpg",
             alt: "Bouquet of wildflowers",
             caption: "Nature's confection held with trembling joy",
-            date: "Spring 2024",
-            location: "Floral Studio"
+            date: "",
+            location: ""
         },
         {
             id: 5,
             src: "/gallery3.JPG",
             alt: "Bride adjusting her gown",
             caption: "The final touch before forever begins",
-            date: "Spring 2024",
-            location: "Bridal Suite"
+            date: "",
+            location: ""
         },
         {
             id: 6,
             src: "/gallery4.JPG",
             alt: "Groom's emotional moment",
             caption: "A deep breath before the beautiful plunge",
-            date: "Spring 2024",
-            location: "Groom's Quarters"
+            date: "",
+            location: ""
         },
         {
             id: 7,
             src: "/gallery5.JPG",
             alt: "Wedding rings on rustic wood",
             caption: "Circles of promise waiting to be worn",
-            date: "Spring 2024",
-            location: "Ceremony Altar"
+            date: "",
+            location: ""
         },
         {
             id: 8,
             src: "/gallery6.JPG",
             alt: "Aisle decorated with petals",
             caption: "A floral path to destiny",
-            date: "Spring 2024",
-            location: "Main Aisle"
+            date: "",
+            location: ""
         },
         {
             id: 9,
             src: "/gallery7.JPG",
             alt: "Couple holding hands secretly",
             caption: "Fingers intertwined before the walk",
-            date: "Spring 2024",
-            location: "Chapel Backstage"
+            date: "",
+            location: ""
         },
         {
             id: 10,
             src: "/gallery8.JPG",
             alt: "Bride's teary-eyed smile",
             caption: "Tears of joy reflecting a thousand dreams",
-            date: "Spring 2024",
-            location: "Chapel Entrance"
+            date: "",
+            location: ""
         },
         {
             id: 11,
             src: "/gallery9.JPG",
             alt: "Parents emotional embrace",
             caption: "Generations of love watching love begin",
-            date: "Spring 2024",
-            location: "Family Seating"
+            date: "",
+            location: ""
         },
         {
             id: 12,
             src: "/gallery10.JPG",
             alt: "Sunset silhouette kiss",
             caption: "Two shadows becoming one against the dying light",
-            date: "Spring 2024",
-            location: "Beach Cliffside"
+            date: "",
+            location: ""
         },
         {
             id: 13,
             src: "/gallery11.jpg",
             alt: "Reception sparkler exit",
             caption: "Walking through a tunnel of stars into forever",
-            date: "Spring 2024",
-            location: "Venue Exit"
+            date: "",
+            location: ""
         },
         {
             id: 14,
             src: "/gallery12.jpg",
             alt: "Dance floor dip",
             caption: "Falling into love's rhythm without fear",
-            date: "Spring 2024",
-            location: "Main Dance Floor"
+            date: "",
+            location: ""
         },
         {
             id: 15,
             src: "/gallery13.jpg",
             alt: "Candlelit dinner table",
             caption: "Flickering flames witnessing whispered promises",
-            date: "Spring 2024",
-            location: "Reception Hall"
+            date: "",
+            location: ""
         },
         {
             id: 16,
             src: "/gallery14.JPG",
             alt: "Final farewell wave",
             caption: "Goodbye to single life, hello to shared adventures",
-            date: "Spring 2024",
-            location: "Getaway Car"
+            date: "",
+            location: ""
         }
     ];
 
@@ -180,7 +180,7 @@ const WeddingGallery = () => {
 
     return (
         <>
-            <style jsx global>{`
+        <style jsx global>{`
         .wedding-gallery-container {
           min-height: 100vh;
           background: linear-gradient(135deg, #fdf6f0 0%, #f8edeb 100%);
