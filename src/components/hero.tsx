@@ -53,7 +53,6 @@ const HeroSection = () => {
     const checkMobile = () => {
       const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
-      console.log('Is mobile:', mobile, 'Width:', window.innerWidth);
     };
 
     // Initial check
@@ -79,13 +78,11 @@ const HeroSection = () => {
 
   // Handle video ended event
   const handleVideoEnd = () => {
-    console.log('Video ended');
     setCurrentSlide(1); // Move to first image after video
   };
 
   // Handle video error
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
-    console.error('Video error:', e);
     setVideoError(true);
     // Fallback to next slide if video fails
     setCurrentSlide(1);
@@ -114,16 +111,11 @@ const HeroSection = () => {
   // Get the appropriate video source based on device
   const getVideoSource = (item: HeroItem) => {
     if (item.type !== 'video') return item.src;
-    
+
     const source = isMobile && item.mobileSrc ? item.mobileSrc : item.src;
-    console.log('Video source selected:', source, 'Is mobile:', isMobile);
     return source;
   };
 
-  // Log when slide changes
-  useEffect(() => {
-    console.log('Current slide:', currentSlide, 'Type:', heroContent[currentSlide].type);
-  }, [currentSlide, heroContent]);
 
   return (
     <section className="relative h-screen w-full overflow-hidden -top-16">

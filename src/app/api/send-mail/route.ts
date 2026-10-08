@@ -9,8 +9,6 @@ export async function POST(req: Request) {
       message: string;
     };
 
-    console.log("Incoming email data:", { name, email, message });
-
     const user = process.env.EMAIL_USER;
     const pass = process.env.EMAIL_PASS;
 
@@ -30,12 +28,10 @@ export async function POST(req: Request) {
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     };
 
-    const info = await transporter.sendMail(mailOptions);
-    console.log("Mail sent successfully:", info.messageId);
+    await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: true });
   } catch (error: unknown) {
-    console.error("Error sending email:", error);
     return NextResponse.json(
       { success: false, error: (error as Error).message },
       { status: 500 }

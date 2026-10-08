@@ -38,7 +38,6 @@ const ContactSection = () => {
       });
 
       if (res.ok) {
-        console.log("✅ Email sent successfully!");
         setIsSubmitted(true);
         setFormData({
           name: "",
@@ -50,11 +49,9 @@ const ContactSection = () => {
 
         setTimeout(() => setIsSubmitted(false), 3000);
       } else {
-        console.error("❌ Error sending message:", await res.text());
         setIsError(true);
       }
     } catch (error) {
-      console.error("⚠️ Error submitting form:", error);
       setIsError(true);
     }
   };

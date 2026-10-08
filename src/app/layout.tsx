@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     title: 'Own Media - Premium Photography & Videography Services',
     description: 'Capturing timeless moments through professional photography and videography services.',
@@ -66,6 +70,7 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-verification-code',
   },
+  themeColor: '#C1A35F',
   category: 'photography services',
 };
 
@@ -76,22 +81,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.className} ${playfair.variable}`}>
-      <head>
-        <link rel="icon" href="/logo.png" sizes="any" />
-        <link
-          rel="icon"
-          href="/logo.png"
-          type="image/<generated>"
-          sizes="<generated>"
-        />
-        <link
-          rel="apple-touch-icon"
-          href="/logo.png"
-          type="image/<generated>"
-          sizes="<generated>"
-        />
-        <meta name="theme-color" content="#C1A35F" />
-      </head>
       <body className="min-h-screen flex flex-col" style={{ backgroundColor: '#F5F3EF' }}>
         <Navbar />
         <main className="flex-grow pt-16">
